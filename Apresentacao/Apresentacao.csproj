@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,14 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CepAberto.cs" />
+    <Compile Include="CEPAbertoResponse.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -74,6 +91,207 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Search_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Add Image_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Add List_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Add List_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Add Shopping Cart_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Add Shopping Cart_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Air Pilot Hat_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\banknotes_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Book Stack_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Box_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Buy_25px_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\card_in_use_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Checked Checkbox_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Circled Right 2_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\curriculum_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Delete Property_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Delete_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\document_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Down 2_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Down 3_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Edit Property_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\edit_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Edit_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\end_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Exit_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Globe_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Handshake_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Invert Selection_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\key_security_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\left_round_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Library_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Long Arrow Left_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Long Arrow Right_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Manager_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Map Marker_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Marker_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Message_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Microsoft Excel_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Move by Trolley_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\MS Excel_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Organization_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Page Overview _15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Permanent Job_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Pesquisasearch_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\plus_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Plus_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Point Objects_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Purchase Order_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Report Card_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\report_card_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\right_round_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Rotate Left_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Save_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\search_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Search_15px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\skip_to_start_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Sorting Arrows_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Stack_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\trash_15px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Unchecked Checkbox_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Uninstalling Updates_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Upload_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\US Dollar_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Warehouse_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Worldwide Location_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Circled Left 2_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Circled Right 2_25px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,10 +22,12 @@ namespace Repositorio.Entidades
 
         [Column(TypeName ="nvarchar")]
         [MaxLength(50)]
+        [Required(ErrorMessage ="Nome do estado é obrigatório")]
         public string Nome { get => nome; set => nome = value; }
 
         [Column(TypeName ="nvarchar")]
         [MaxLength(2)]
+        [Required(ErrorMessage ="Sigla do estado é obrigatorio")]
         public string Sigla { get => sigla; set => sigla = value; }
 
         [ForeignKey("Pais")]

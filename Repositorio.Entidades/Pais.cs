@@ -21,10 +21,12 @@ namespace Repositorio.Entidades
 
         [Column(TypeName ="nvarchar")]
         [MaxLength(50)]
+        [Required(ErrorMessage ="Nome do pais é obrigatório")]
         public string Nome { get => nome; set => nome = value; }
 
         [Column(TypeName ="nvarchar")]
         [MaxLength(4)]
+        [Required(ErrorMessage ="Código do pais é obrigatório")]
         public string Codigo { get => codigo; set => codigo = value; }
 
         public ICollection<Estado> estado { get; set; }

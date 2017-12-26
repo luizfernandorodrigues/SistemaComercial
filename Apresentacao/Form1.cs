@@ -16,5 +16,17 @@ namespace Apresentacao
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CEPAbertoResponse cep;
+           cep = CepAberto.GetCepInfo(textBox1.Text);
+            string saida = "Cidade: " + cep.cidade + "\n";
+            saida += "CEP: " + cep.cep + "\n";
+            saida += "Estado: " + cep.estado + "\n";
+            saida += "Rua: " + cep.logradouro + "\n";
+            label1.Text = saida;
+
+        }
     }
 }

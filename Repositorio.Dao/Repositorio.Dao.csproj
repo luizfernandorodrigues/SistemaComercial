@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201712261313559_VERSAO_DB_1.2.1_ADD_TBL_CEP.Designer.cs">
       <DependentUpon>201712261313559_VERSAO_DB_1.2.1_ADD_TBL_CEP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.cs" />
+    <Compile Include="Migrations\201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.Designer.cs">
+      <DependentUpon>201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712261313559_VERSAO_DB_1.2.1_ADD_TBL_CEP.resx">
       <DependentUpon>201712261313559_VERSAO_DB_1.2.1_ADD_TBL_CEP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.resx">
+      <DependentUpon>201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
