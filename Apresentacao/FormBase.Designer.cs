@@ -73,6 +73,7 @@
             // 
             // buttonUltimo
             // 
+            this.buttonUltimo.Enabled = false;
             this.buttonUltimo.Image = global::Apresentacao.Properties.Resources.Circled_Right_2_25px;
             this.buttonUltimo.Location = new System.Drawing.Point(119, 3);
             this.buttonUltimo.Name = "buttonUltimo";
@@ -82,6 +83,7 @@
             // 
             // buttonProximo
             // 
+            this.buttonProximo.Enabled = false;
             this.buttonProximo.Image = global::Apresentacao.Properties.Resources.Down_2_25px;
             this.buttonProximo.Location = new System.Drawing.Point(119, 47);
             this.buttonProximo.Name = "buttonProximo";
@@ -91,6 +93,7 @@
             // 
             // buttonPrimeiro
             // 
+            this.buttonPrimeiro.Enabled = false;
             this.buttonPrimeiro.Image = global::Apresentacao.Properties.Resources.Circled_Left_2_25px;
             this.buttonPrimeiro.Location = new System.Drawing.Point(75, 3);
             this.buttonPrimeiro.Name = "buttonPrimeiro";
@@ -100,6 +103,7 @@
             // 
             // buttonAnterior
             // 
+            this.buttonAnterior.Enabled = false;
             this.buttonAnterior.Image = global::Apresentacao.Properties.Resources.Down_3_25px;
             this.buttonAnterior.Location = new System.Drawing.Point(75, 47);
             this.buttonAnterior.Name = "buttonAnterior";
@@ -155,6 +159,7 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Image = global::Apresentacao.Properties.Resources.Rotate_Left_25px;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.Location = new System.Drawing.Point(271, 3);
@@ -167,6 +172,7 @@
             // 
             // buttonExcluir
             // 
+            this.buttonExcluir.Enabled = false;
             this.buttonExcluir.Image = global::Apresentacao.Properties.Resources.Delete_25px;
             this.buttonExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonExcluir.Location = new System.Drawing.Point(204, 3);
@@ -179,6 +185,7 @@
             // 
             // buttonEditar
             // 
+            this.buttonEditar.Enabled = false;
             this.buttonEditar.Image = global::Apresentacao.Properties.Resources.Edit_25px;
             this.buttonEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonEditar.Location = new System.Drawing.Point(70, 3);
@@ -203,6 +210,7 @@
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.Enabled = false;
             this.buttonSalvar.Image = global::Apresentacao.Properties.Resources.Save_25px;
             this.buttonSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonSalvar.Location = new System.Drawing.Point(137, 3);

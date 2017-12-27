@@ -77,6 +77,18 @@
     <Compile Include="Migrations\201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.Designer.cs">
       <DependentUpon>201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712271653212_VERSAO_DB_1.3.1_ADD_TABLE_EMPRESA.cs" />
+    <Compile Include="Migrations\201712271653212_VERSAO_DB_1.3.1_ADD_TABLE_EMPRESA.Designer.cs">
+      <DependentUpon>201712271653212_VERSAO_DB_1.3.1_ADD_TABLE_EMPRESA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712271655522_VERSAO_DB_1.3.2_ADD_TABLE_GRUPO_USUARIO.cs" />
+    <Compile Include="Migrations\201712271655522_VERSAO_DB_1.3.2_ADD_TABLE_GRUPO_USUARIO.Designer.cs">
+      <DependentUpon>201712271655522_VERSAO_DB_1.3.2_ADD_TABLE_GRUPO_USUARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712271659257_VERSAO_DB_1.3.3_ADD_TABLE_USUARIO.cs" />
+    <Compile Include="Migrations\201712271659257_VERSAO_DB_1.3.3_ADD_TABLE_USUARIO.Designer.cs">
+      <DependentUpon>201712271659257_VERSAO_DB_1.3.3_ADD_TABLE_USUARIO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.resx">
       <DependentUpon>201712261908399_VERSAO_DB_1.2.2_MODIFICACAO DE CAMPOS NULOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712271653212_VERSAO_DB_1.3.1_ADD_TABLE_EMPRESA.resx">
+      <DependentUpon>201712271653212_VERSAO_DB_1.3.1_ADD_TABLE_EMPRESA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712271655522_VERSAO_DB_1.3.2_ADD_TABLE_GRUPO_USUARIO.resx">
+      <DependentUpon>201712271655522_VERSAO_DB_1.3.2_ADD_TABLE_GRUPO_USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712271659257_VERSAO_DB_1.3.3_ADD_TABLE_USUARIO.resx">
+      <DependentUpon>201712271659257_VERSAO_DB_1.3.3_ADD_TABLE_USUARIO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,5 +24,9 @@ namespace Repositorio.Dao.Contexto
         public DbSet<Estado> Estado { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
         public DbSet<Cep> Cep { get; set; }
+        public DbSet<Empresa> Empresa { get; set; }
+        public DbSet<GrupoUsuario> GrupoUsuario { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+
     }
 }

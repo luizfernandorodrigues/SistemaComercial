@@ -34,5 +34,7 @@ namespace Repositorio.Entidades
         public Guid IdPais { get => idPais; set => idPais = value; }
         
         public virtual Pais Pais { get => pais; set => pais = value; }
+
+        public ICollection<Cidade> cidade { get; set; }
     }
 }

@@ -33,5 +33,7 @@ namespace Repositorio.Entidades
         [ForeignKey("Estado")]
         public Guid IdEstado { get => idEstado; set => idEstado = value; }
         public Estado Estado { get => estado; set => estado = value; }
+
+        public ICollection<Cep> cep { get; set; }
     }
 }
