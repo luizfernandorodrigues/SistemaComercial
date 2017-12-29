@@ -91,6 +91,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\Base\IRepositorio.cs" />
+    <Compile Include="Repositorios\Base\Repositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -100,6 +102,10 @@
     <ProjectReference Include="..\Repositorio.Entidades\Repositorio.Entidades.csproj">
       <Project>{38afe106-5a24-4aae-86c3-c8a0337b0062}</Project>
       <Name>Repositorio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilitarios\Utilitarios.csproj">
+      <Project>{4b0f81ad-b28f-47ea-988f-2d7b7f2fb3fd}</Project>
+      <Name>Utilitarios</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

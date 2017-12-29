@@ -207,6 +207,7 @@
             this.buttonNovo.Text = "Novo";
             this.buttonNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNovo.UseVisualStyleBackColor = true;
+            this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // buttonSalvar
             // 
@@ -244,6 +245,7 @@
             this.Name = "FormBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBase";
+            this.Load += new System.EventHandler(this.FormBase_Load);
             this.panelBotoesNavegacao.ResumeLayout(false);
             this.panelBotoesAcao.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -16,5 +16,11 @@ namespace Apresentacao
         {
             InitializeComponent();
         }
+
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastroEmpresa frm = new FormCadastroEmpresa();
+            frm.Show();
+        }
     }
 }
