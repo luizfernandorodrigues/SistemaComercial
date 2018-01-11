@@ -123,6 +123,7 @@
             this.buttonBuscaCep.Size = new System.Drawing.Size(25, 22);
             this.buttonBuscaCep.TabIndex = 35;
             this.buttonBuscaCep.UseVisualStyleBackColor = true;
+            this.buttonBuscaCep.Click += new System.EventHandler(this.buttonBuscaCep_Click);
             // 
             // textBoxemail
             // 

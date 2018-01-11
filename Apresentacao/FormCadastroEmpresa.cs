@@ -14,5 +14,11 @@ namespace Apresentacao
         {
             InitializeComponent();
         }
+
+        private void buttonBuscaCep_Click(object sender, EventArgs e)
+        {
+            FormCepPesquisa frm = new FormCepPesquisa();
+            frm.Show();
+        }
     }
 }
