@@ -26,6 +26,10 @@ namespace Apresentacao
         public const string BOTAO_SALVAR = "Gravar Registro!";
         public const string MENSAGEM_SUCESSO = "Registro Gravado com Sucesso!";
         public const string MENSAGEM_ERRO = "Não Foi Possivel Gravar o Registro!\n Causa: ";
+        public const string BOTAO_CARREGA_SELECIONADO = "Carregar selecionados!";
+        public const string BOTAO_SELECIONA_TUDO = "Selecionar Todos Registros!";
+        public const string BOTAO_DESMARCA_TUDO = "Desmarcar Tudo!";
+        public const string BOTAO_EXPORTAR_EXCEL = "Exportar Registros Selecionado para Excel!";
 
         public static Guid usuarioLogado;
         public static Guid empresaLogado;

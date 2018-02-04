@@ -29,8 +29,8 @@ namespace Apresentacao
             lst.Add(new PreencheComboBox { descricao = "Maior Igual", valor = "4" });
             lst.Add(new PreencheComboBox { descricao = "Menor Igual", valor = "5" });
             lst.Add(new PreencheComboBox { descricao = "Contem", valor = "6" });
-            lst.Add(new PreencheComboBox { descricao = "Diferente de", valor = "6" });
-            lst.Add(new PreencheComboBox { descricao = "Terminado Por", valor = "7" });
+            lst.Add(new PreencheComboBox { descricao = "Diferente de", valor = "7" });
+            lst.Add(new PreencheComboBox { descricao = "Terminado Por", valor = "8" });
 
             cb.DataSource = lst;
             cb.DisplayMember = "descricao";

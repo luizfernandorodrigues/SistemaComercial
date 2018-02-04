@@ -133,6 +133,16 @@ namespace Apresentacao.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Binoculars_25px {
+            get {
+                object obj = ResourceManager.GetObject("Binoculars_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Book_Stack_25px {
             get {
                 object obj = ResourceManager.GetObject("Book Stack_25px", resourceCulture);
@@ -166,6 +176,16 @@ namespace Apresentacao.Properties {
         internal static System.Drawing.Bitmap card_in_use_25px {
             get {
                 object obj = ResourceManager.GetObject("card_in_use_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Checked_25px {
+            get {
+                object obj = ResourceManager.GetObject("Checked_25px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

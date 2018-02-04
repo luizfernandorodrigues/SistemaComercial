@@ -323,10 +323,24 @@
     <None Include="Imagens\Circled Right 2_25px.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Repositorio.Dao\Repositorio.Dao.csproj">
+      <Project>{44026d4f-d313-4d37-acdc-d2efd858c1f5}</Project>
+      <Name>Repositorio.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositorio.Entidades\Repositorio.Entidades.csproj">
+      <Project>{38afe106-5a24-4aae-86c3-c8a0337b0062}</Project>
+      <Name>Repositorio.Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilitarios\Utilitarios.csproj">
       <Project>{4b0f81ad-b28f-47ea-988f-2d7b7f2fb3fd}</Project>
       <Name>Utilitarios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Checked_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Binoculars_25px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

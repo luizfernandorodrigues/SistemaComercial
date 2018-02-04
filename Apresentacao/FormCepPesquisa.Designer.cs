@@ -28,36 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCepPesquisa));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCep = new System.Windows.Forms.DataGridView();
+            this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCepPesquisa = new System.Windows.Forms.Label();
             this.labelCidade = new System.Windows.Forms.Label();
             this.comboBoxCep = new System.Windows.Forms.ComboBox();
             this.comboBoxCidade = new System.Windows.Forms.ComboBox();
             this.textBoxCep = new System.Windows.Forms.TextBox();
             this.textBoxCidade = new System.Windows.Forms.TextBox();
-            this.buttonPesquisaCep = new System.Windows.Forms.Button();
             this.textBoxCepEntre = new System.Windows.Forms.TextBox();
             this.textBoxCidadeEntre = new System.Windows.Forms.TextBox();
-            this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonExcel = new System.Windows.Forms.Button();
+            this.buttonDesmarcaTudo = new System.Windows.Forms.Button();
+            this.buttonMarcarTudo = new System.Windows.Forms.Button();
+            this.buttonCarregaSelecionado = new System.Windows.Forms.Button();
+            this.buttonPesquisaCep = new System.Windows.Forms.Button();
+            this.toolTipPesquisaCep = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCep)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewCep
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleciona,
             this.Cep,
             this.Cidade,
             this.Estado});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(466, 327);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewCep.Location = new System.Drawing.Point(12, 102);
+            this.dataGridViewCep.Name = "dataGridViewCep";
+            this.dataGridViewCep.Size = new System.Drawing.Size(466, 292);
+            this.dataGridViewCep.TabIndex = 0;
+            // 
+            // Seleciona
+            // 
+            this.Seleciona.HeaderText = "SL";
+            this.Seleciona.Name = "Seleciona";
+            this.Seleciona.Width = 50;
+            // 
+            // Cep
+            // 
+            this.Cep.HeaderText = "Cep";
+            this.Cep.Name = "Cep";
+            // 
+            // Cidade
+            // 
+            this.Cidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // labelCepPesquisa
             // 
@@ -109,15 +137,6 @@
             this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxCidade.TabIndex = 6;
             // 
-            // buttonPesquisaCep
-            // 
-            this.buttonPesquisaCep.Location = new System.Drawing.Point(403, 6);
-            this.buttonPesquisaCep.Name = "buttonPesquisaCep";
-            this.buttonPesquisaCep.Size = new System.Drawing.Size(75, 23);
-            this.buttonPesquisaCep.TabIndex = 7;
-            this.buttonPesquisaCep.Text = "Pesquisa";
-            this.buttonPesquisaCep.UseVisualStyleBackColor = true;
-            // 
             // textBoxCepEntre
             // 
             this.textBoxCepEntre.Location = new System.Drawing.Point(275, 6);
@@ -134,33 +153,61 @@
             this.textBoxCidadeEntre.TabIndex = 9;
             this.textBoxCidadeEntre.Visible = false;
             // 
-            // Seleciona
+            // buttonExcel
             // 
-            this.Seleciona.HeaderText = "SL";
-            this.Seleciona.Name = "Seleciona";
-            this.Seleciona.Width = 50;
+            this.buttonExcel.Image = global::Apresentacao.Properties.Resources.Microsoft_Excel_25px;
+            this.buttonExcel.Location = new System.Drawing.Point(135, 64);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(34, 32);
+            this.buttonExcel.TabIndex = 13;
+            this.buttonExcel.UseVisualStyleBackColor = true;
             // 
-            // Cep
+            // buttonDesmarcaTudo
             // 
-            this.Cep.HeaderText = "Cep";
-            this.Cep.Name = "Cep";
+            this.buttonDesmarcaTudo.Image = global::Apresentacao.Properties.Resources.Unchecked_Checkbox_25px;
+            this.buttonDesmarcaTudo.Location = new System.Drawing.Point(95, 64);
+            this.buttonDesmarcaTudo.Name = "buttonDesmarcaTudo";
+            this.buttonDesmarcaTudo.Size = new System.Drawing.Size(34, 32);
+            this.buttonDesmarcaTudo.TabIndex = 12;
+            this.buttonDesmarcaTudo.UseVisualStyleBackColor = true;
             // 
-            // Cidade
+            // buttonMarcarTudo
             // 
-            this.Cidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cidade.HeaderText = "Cidade";
-            this.Cidade.Name = "Cidade";
+            this.buttonMarcarTudo.Image = global::Apresentacao.Properties.Resources.Checked_25px;
+            this.buttonMarcarTudo.Location = new System.Drawing.Point(55, 64);
+            this.buttonMarcarTudo.Name = "buttonMarcarTudo";
+            this.buttonMarcarTudo.Size = new System.Drawing.Size(34, 32);
+            this.buttonMarcarTudo.TabIndex = 11;
+            this.buttonMarcarTudo.UseVisualStyleBackColor = true;
             // 
-            // Estado
+            // buttonCarregaSelecionado
             // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
+            this.buttonCarregaSelecionado.Image = global::Apresentacao.Properties.Resources.Upload_25px;
+            this.buttonCarregaSelecionado.Location = new System.Drawing.Point(15, 64);
+            this.buttonCarregaSelecionado.Name = "buttonCarregaSelecionado";
+            this.buttonCarregaSelecionado.Size = new System.Drawing.Size(34, 32);
+            this.buttonCarregaSelecionado.TabIndex = 10;
+            this.buttonCarregaSelecionado.UseVisualStyleBackColor = true;
+            // 
+            // buttonPesquisaCep
+            // 
+            this.buttonPesquisaCep.Image = global::Apresentacao.Properties.Resources.Binoculars_25px;
+            this.buttonPesquisaCep.Location = new System.Drawing.Point(403, 6);
+            this.buttonPesquisaCep.Name = "buttonPesquisaCep";
+            this.buttonPesquisaCep.Size = new System.Drawing.Size(75, 46);
+            this.buttonPesquisaCep.TabIndex = 7;
+            this.buttonPesquisaCep.UseVisualStyleBackColor = true;
+            this.buttonPesquisaCep.Click += new System.EventHandler(this.buttonPesquisaCep_Click);
             // 
             // FormCepPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 420);
+            this.ClientSize = new System.Drawing.Size(490, 406);
+            this.Controls.Add(this.buttonExcel);
+            this.Controls.Add(this.buttonDesmarcaTudo);
+            this.Controls.Add(this.buttonMarcarTudo);
+            this.Controls.Add(this.buttonCarregaSelecionado);
             this.Controls.Add(this.textBoxCidadeEntre);
             this.Controls.Add(this.textBoxCepEntre);
             this.Controls.Add(this.buttonPesquisaCep);
@@ -170,14 +217,14 @@
             this.Controls.Add(this.comboBoxCep);
             this.Controls.Add(this.labelCidade);
             this.Controls.Add(this.labelCepPesquisa);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCep);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCepPesquisa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa Cep";
             this.Load += new System.EventHandler(this.FormCepPesquisa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,7 +232,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCep;
         private System.Windows.Forms.Label labelCepPesquisa;
         private System.Windows.Forms.Label labelCidade;
         private System.Windows.Forms.ComboBox comboBoxCep;
@@ -199,5 +246,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cep;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Button buttonCarregaSelecionado;
+        private System.Windows.Forms.Button buttonMarcarTudo;
+        private System.Windows.Forms.Button buttonDesmarcaTudo;
+        private System.Windows.Forms.Button buttonExcel;
+        private System.Windows.Forms.ToolTip toolTipPesquisaCep;
     }
 }

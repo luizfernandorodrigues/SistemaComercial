@@ -136,11 +136,11 @@
   <data name="Stack_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Stack_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Report Card_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Report Card_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Plus_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Plus_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Add Image_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Add Image_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Down 2_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Down 2_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +196,8 @@
   <data name="Organization_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Organization_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Point Objects_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Point Objects_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Add Image_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Add Image_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add List_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Add List_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,6 +259,9 @@
   <data name="skip_to_start_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\skip_to_start_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Point Objects_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Point Objects_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="left_round_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\left_round_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -276,9 +279,6 @@
   </data>
   <data name="Long Arrow Right_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Long Arrow Right_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Book Stack_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Book Stack_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\search_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,14 +301,20 @@
   <data name="Search_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Search_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="end_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\end_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Book Stack_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Book Stack_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Handshake_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Handshake_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="end_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\end_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MS Excel_25px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\MS Excel_25px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Checked_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Checked_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Upload_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Upload_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,7 +328,7 @@
   <data name="Rotate Left_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Rotate Left_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Report Card_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Report Card_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Binoculars_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Binoculars_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

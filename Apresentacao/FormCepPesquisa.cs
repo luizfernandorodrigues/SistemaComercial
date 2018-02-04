@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Repositorio.Entidades;
+using Repositorio.Dao.Repositorios;
 
 namespace Apresentacao
 {
@@ -22,6 +24,11 @@ namespace Apresentacao
             PreencheComboBox preencheComboBox = new PreencheComboBox();
             preencheComboBox.combo(comboBoxCep);
             preencheComboBox.combo(comboBoxCidade);
+            dataGridViewCep.AutoGenerateColumns = false;
+            toolTipPesquisaCep.SetToolTip(buttonCarregaSelecionado, Util.BOTAO_CARREGA_SELECIONADO);
+            toolTipPesquisaCep.SetToolTip(buttonDesmarcaTudo, Util.BOTAO_DESMARCA_TUDO);
+            toolTipPesquisaCep.SetToolTip(buttonExcel, Util.BOTAO_EXPORTAR_EXCEL);
+            toolTipPesquisaCep.SetToolTip(buttonMarcarTudo, Util.BOTAO_SELECIONA_TUDO);
         }
 
         private void comboBoxCep_SelectionChangeCommitted(object sender, EventArgs e)
@@ -46,6 +53,20 @@ namespace Apresentacao
             {
                 textBoxCidadeEntre.Visible = false;
             }
+        }
+
+        private void buttonPesquisaCep_Click(object sender, EventArgs e)
+        {
+            preencheGrid();
+        }
+
+        private void preencheGrid()
+        {
+            List<Cep> cep = new List<Cep>();
+            CepRepositorio cepRepositorio = new CepRepositorio();
+            cep = cepRepositorio.buscaCep(textBoxCep.Text);
+            dataGridViewCep.DataSource = cep;
+            
         }
     }
 }
