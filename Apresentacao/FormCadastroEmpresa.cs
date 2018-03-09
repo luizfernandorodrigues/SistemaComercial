@@ -20,5 +20,10 @@ namespace Apresentacao
             FormCepPesquisa frm = new FormCepPesquisa();
             frm.Show();
         }
+
+        private void FormCadastroEmpresa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

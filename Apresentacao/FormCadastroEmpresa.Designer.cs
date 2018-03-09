@@ -443,6 +443,7 @@
             this.Controls.Add(this.panelCampos);
             this.Name = "FormCadastroEmpresa";
             this.Text = "Cadastro de Empresa";
+            this.Load += new System.EventHandler(this.FormCadastroEmpresa_Load);
             this.Controls.SetChildIndex(this.panelCampos, 0);
             this.panelCampos.ResumeLayout(false);
             this.panelCampos.PerformLayout();

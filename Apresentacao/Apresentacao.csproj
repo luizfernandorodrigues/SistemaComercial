@@ -66,11 +66,23 @@
     <Compile Include="FormCadastroEmpresa.Designer.cs">
       <DependentUpon>FormCadastroEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroPais.Designer.cs">
+      <DependentUpon>FormCadastroPais.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCepPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCepPesquisa.Designer.cs">
       <DependentUpon>FormCepPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModelo.Designer.cs">
+      <DependentUpon>FormModelo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -92,8 +104,14 @@
     <EmbeddedResource Include="FormCadastroEmpresa.resx">
       <DependentUpon>FormCadastroEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroPais.resx">
+      <DependentUpon>FormCadastroPais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCepPesquisa.resx">
       <DependentUpon>FormCepPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModelo.resx">
+      <DependentUpon>FormModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -341,6 +359,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagens\Binoculars_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tasks.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

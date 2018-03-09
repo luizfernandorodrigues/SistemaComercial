@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Repositorio.Entidades;
 using Repositorio.Dao.Repositorios;
+using Utilitarios;
 
 namespace Apresentacao
 {
@@ -33,6 +34,7 @@ namespace Apresentacao
 
         private void comboBoxCep_SelectionChangeCommitted(object sender, EventArgs e)
         {
+           
             if (comboBoxCep.SelectedValue.Equals("3"))
             {
                 textBoxCepEntre.Visible = true;
@@ -45,6 +47,7 @@ namespace Apresentacao
 
         private void comboBoxCidade_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            
             if (comboBoxCidade.SelectedValue.Equals("3"))
             {
                 textBoxCidadeEntre.Visible = true;
@@ -57,6 +60,7 @@ namespace Apresentacao
 
         private void buttonPesquisaCep_Click(object sender, EventArgs e)
         {
+            Util_Msg.aviso("teste");
             preencheGrid();
         }
 
@@ -64,7 +68,7 @@ namespace Apresentacao
         {
             List<Cep> cep = new List<Cep>();
             CepRepositorio cepRepositorio = new CepRepositorio();
-            cep = cepRepositorio.buscaCep(textBoxCep.Text);
+         //   cep = cepRepositorio.buscaCep(textBoxCep.Text);
             dataGridViewCep.DataSource = cep;
             
         }

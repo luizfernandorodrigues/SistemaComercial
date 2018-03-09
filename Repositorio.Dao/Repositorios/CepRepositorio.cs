@@ -24,7 +24,7 @@ namespace Repositorio.Dao.Repositorios
                 }
                 else
                 {
-                    lstCep = repositorioCep.Get(c => c.Cepe + ".filtro" + (cep)).ToList<Cep>();
+                    lstCep = repositorioCep.Get(c => c.Cepe.Contains(cep) && c.Cepe).ToList<Cep>();
                 }
 
                 lstCep = repositorioCep.Get(c => c.Cepe.Equals(cep)).ToList<Cep>();

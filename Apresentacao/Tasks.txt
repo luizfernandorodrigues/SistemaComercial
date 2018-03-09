@@ -1,0 +1,2 @@
+﻿-criar classe de filtro para pesquisas
+	-recebe o index da combobox e retorna o tipo de filtro necessario
