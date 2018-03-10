@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Apresentacao;
-namespace Utilitarios
+using Utilitarios;
+namespace Apresentacao
 {
     public static class Validacao
     {
@@ -18,13 +19,16 @@ namespace Utilitarios
             return resultadoValidacao;
         }
 
-        public static void ValidarEntidade(object obj)
+        public static int ValidarEntidade(object obj)
         {
             var erros = Validacao.getValidationErros(obj);
+            int quantidadeErro = erros.Count();
             foreach (var error in erros)
             {
-                MessageBox.Show((error.ErrorMessage), Util.TITULO, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Util_Msg.atencao(error.ErrorMessage);
+               
             }
+            return quantidadeErro;
         }
     }
 }

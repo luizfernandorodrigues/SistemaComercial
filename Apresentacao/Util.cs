@@ -197,7 +197,7 @@ namespace Apresentacao
                     desabilitaCamposNovo(c);
                 }
             }
-            desabilitaBotoesNovo(ctrl);
+            habilitaBotoesNovo(ctrl);
         }
 
         /// <summary>

@@ -37,6 +37,11 @@
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logradouroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paísToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +64,8 @@
             // cadastrosIniciaisToolStripMenuItem
             // 
             this.cadastrosIniciaisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empresaToolStripMenuItem});
+            this.empresaToolStripMenuItem,
+            this.logradouroToolStripMenuItem});
             this.cadastrosIniciaisToolStripMenuItem.Name = "cadastrosIniciaisToolStripMenuItem";
             this.cadastrosIniciaisToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.cadastrosIniciaisToolStripMenuItem.Text = "Cadastros Iniciais";
@@ -67,7 +73,7 @@
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empresaToolStripMenuItem.Text = "Empresa";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
@@ -108,6 +114,42 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
+            // logradouroToolStripMenuItem
+            // 
+            this.logradouroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cepToolStripMenuItem,
+            this.cidadeToolStripMenuItem,
+            this.estadoToolStripMenuItem,
+            this.paísToolStripMenuItem});
+            this.logradouroToolStripMenuItem.Name = "logradouroToolStripMenuItem";
+            this.logradouroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logradouroToolStripMenuItem.Text = "Logradouro";
+            // 
+            // cepToolStripMenuItem
+            // 
+            this.cepToolStripMenuItem.Name = "cepToolStripMenuItem";
+            this.cepToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cepToolStripMenuItem.Text = "Cep";
+            // 
+            // cidadeToolStripMenuItem
+            // 
+            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cidadeToolStripMenuItem.Text = "Cidade";
+            // 
+            // estadoToolStripMenuItem
+            // 
+            this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
+            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estadoToolStripMenuItem.Text = "Estado";
+            // 
+            // paísToolStripMenuItem
+            // 
+            this.paísToolStripMenuItem.Name = "paísToolStripMenuItem";
+            this.paísToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.paísToolStripMenuItem.Text = "País";
+            this.paísToolStripMenuItem.Click += new System.EventHandler(this.paísToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,5 +178,10 @@
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empresaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logradouroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cepToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paísToolStripMenuItem;
     }
 }

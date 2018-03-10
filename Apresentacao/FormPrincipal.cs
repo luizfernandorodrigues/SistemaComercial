@@ -22,5 +22,11 @@ namespace Apresentacao
             FormCadastroEmpresa frm = new FormCadastroEmpresa();
             frm.Show();
         }
+
+        private void paísToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastroPais frm = new FormCadastroPais();
+            frm.Show();
+        }
     }
 }

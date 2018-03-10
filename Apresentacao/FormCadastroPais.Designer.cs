@@ -34,6 +34,10 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
@@ -65,6 +69,7 @@
             // 
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(47, 127);
+            this.txtCodigo.MaxLength = 4;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(527, 20);
             this.txtCodigo.TabIndex = 6;
@@ -79,6 +84,7 @@
             this.Controls.Add(this.lblNome);
             this.Name = "FormCadastroPais";
             this.Text = "Cadastro de Pais";
+            this.Load += new System.EventHandler(this.FormCadastroPais_Load);
             this.Controls.SetChildIndex(this.lblNome, 0);
             this.Controls.SetChildIndex(this.lblCodigo, 0);
             this.Controls.SetChildIndex(this.txtNome, 0);

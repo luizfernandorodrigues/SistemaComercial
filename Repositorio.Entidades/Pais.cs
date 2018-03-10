@@ -26,6 +26,7 @@ namespace Repositorio.Entidades
 
         [Column(TypeName ="nvarchar")]
         [MaxLength(4)]
+        [MinLength(4)]
         [Required(ErrorMessage ="Código do pais é obrigatório")]
         public string Codigo { get => codigo; set => codigo = value; }
 

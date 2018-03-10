@@ -37,7 +37,6 @@
             this.buttonPesquisa = new System.Windows.Forms.Button();
             this.panelBotoesAcao = new System.Windows.Forms.Panel();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
@@ -124,7 +123,6 @@
             // 
             this.panelBotoesAcao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBotoesAcao.Controls.Add(this.buttonSair);
-            this.panelBotoesAcao.Controls.Add(this.button6);
             this.panelBotoesAcao.Controls.Add(this.button5);
             this.panelBotoesAcao.Controls.Add(this.buttonExcluir);
             this.panelBotoesAcao.Controls.Add(this.buttonEditar);
@@ -147,15 +145,6 @@
             this.buttonSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(408, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -221,6 +210,7 @@
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // textBoxTituloBotoesAcao
             // 
@@ -256,20 +246,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panelBotoesNavegacao;
-        private System.Windows.Forms.Button buttonUltimo;
-        private System.Windows.Forms.Button buttonPrimeiro;
-        private System.Windows.Forms.Button buttonPesquisa;
         private System.Windows.Forms.Panel panelBotoesAcao;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button buttonExcluir;
-        private System.Windows.Forms.Button buttonEditar;
-        private System.Windows.Forms.Button buttonNovo;
-        private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.Button buttonAnterior;
-        private System.Windows.Forms.Button buttonProximo;
-        private System.Windows.Forms.Button buttonRelatorio;
-        private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.TextBox textBoxTituloBotoesAcao;
+        public System.Windows.Forms.Button buttonUltimo;
+        public System.Windows.Forms.Button buttonPrimeiro;
+        public System.Windows.Forms.Button buttonPesquisa;
+        public System.Windows.Forms.Button button5;
+        public System.Windows.Forms.Button buttonExcluir;
+        public System.Windows.Forms.Button buttonEditar;
+        public System.Windows.Forms.Button buttonNovo;
+        public System.Windows.Forms.Button buttonSalvar;
+        public System.Windows.Forms.Button buttonAnterior;
+        public System.Windows.Forms.Button buttonProximo;
+        public System.Windows.Forms.Button buttonRelatorio;
+        public System.Windows.Forms.Button buttonSair;
     }
 }
