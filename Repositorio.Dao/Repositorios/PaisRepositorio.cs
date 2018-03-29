@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Repositorio.Entidades;
 using Repositorio.Dao.Repositorios.Base;
 using Repositorio.Dao.Contexto;
+using Microsoft.CodeAnalysis.Scripting;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
+using System.Linq.Expressions;
 
 namespace Repositorio.Dao.Repositorios
 {
@@ -34,26 +37,25 @@ namespace Repositorio.Dao.Repositorios
 
         }
 
-        public PaisCollection pesquisa(string nome, string codigo, int operadorNome, int operadorCodigo)
+        public async Task<PaisCollection> pesquisaAsync(string nome, string codigo, int operadorNome, int operadorCodigo)
         {
-            BDContexto ctx = new BDContexto();
+            var filtro = "Pais => Pais.Nome" + operadorNome + nome;
+            var opcoes = ScriptOptions.Default.AddReferences(typeof(Pais).Assembly);
+            Func<Pais, bool> filtroPais = await CSharpScript.EvaluateAsync<Func<Pais, bool>>(filtro, opcoes);
             PaisCollection listaPaises = null;
+            Pais pais = new Pais();
             using (var repPais = new PaisRepositorio())
             {
-                if (nome.Equals("") && codigo.Equals(""))
+                var resultado = repPais.Get(filtroPais);
+               foreach(var p in resultado)
                 {
-                    var paises = ctx.Pais.Where(p => p.Nome.StartsWith(nome));
-
-                    /// criar uma classe onde eu coloco todos tipos de filtros de acordo com o value da combobox
-                    /// exemplo var paises = ctx.Pais.Where(p => p.Nome.StartsWith(nome)); --iniciado por
-                    /// var paises = ctx.Pais.Where(p => p.Nome.Contains(nome)); -- contem
-                    /// precisa bolar algo assim de acordo com o value da com o value da combobox chama a query
-
+                    pais = p;
+                    listaPaises.Add(pais);
                 }
-
+                return listaPaises;
             }
 
-            return listaPaises;
+            
         }
     }
 }
