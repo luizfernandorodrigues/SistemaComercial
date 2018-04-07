@@ -171,6 +171,7 @@
     <Compile Include="Repositorios\Base\IRepositorio.cs" />
     <Compile Include="Repositorios\Base\Repositorio.cs" />
     <Compile Include="Repositorios\CepRepositorio.cs" />
+    <Compile Include="Repositorios\FiltroSql.cs" />
     <Compile Include="Repositorios\PaisRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>

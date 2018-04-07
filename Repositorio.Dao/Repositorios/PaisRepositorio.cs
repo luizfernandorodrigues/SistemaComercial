@@ -22,8 +22,11 @@ namespace Repositorio.Dao.Repositorios
         {
             using (var repPais = new PaisRepositorio())
             {
+                string nome = "Brasil";
                 repPais.Adicionar(pais);
                 repPais.SalvarTodos();
+                BDContexto contexto = new BDContexto();
+                var data = contexto.Set<Pais>().SqlQuery("SELECT * FROM PAIS WHERE NOME = @NOME", nome);
             }
         }
 
@@ -37,25 +40,24 @@ namespace Repositorio.Dao.Repositorios
 
         }
 
-        public async Task<PaisCollection> pesquisaAsync(string nome, string codigo, int operadorNome, int operadorCodigo)
+        public async Task<PaisCollection> pesquisaAsync(string nome, string codigo, string operadorNome, string operadorCodigo)
         {
-            var filtro = "Pais => Pais.Nome" + operadorNome + nome;
-            var opcoes = ScriptOptions.Default.AddReferences(typeof(Pais).Assembly);
+            var filtro = "Pais => Pais.Nome." + operadorNome + "(" + nome + ")";
+            var opcoes = ScriptOptions.Default.AddReferences(typeof(Repositorio.Dao.Repositorios.PaisRepositorio).Assembly);
             Func<Pais, bool> filtroPais = await CSharpScript.EvaluateAsync<Func<Pais, bool>>(filtro, opcoes);
             PaisCollection listaPaises = null;
             Pais pais = new Pais();
-            using (var repPais = new PaisRepositorio())
-            {
-                var resultado = repPais.Get(filtroPais);
-               foreach(var p in resultado)
-                {
-                    pais = p;
-                    listaPaises.Add(pais);
-                }
-                return listaPaises;
-            }
+            var repPais = new PaisRepositorio();
+            BDContexto paisContexto = new BDContexto();
+            paisContexto.Pais.Where(filtroPais);
 
-            
+            var resultado = repPais.Get(filtroPais);
+            foreach (var p in resultado)
+            {
+                pais = p;
+                listaPaises.Add(pais);
+            }
+            return listaPaises;
         }
     }
 }

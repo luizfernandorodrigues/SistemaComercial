@@ -28,237 +28,217 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelBotoesNavegacao = new System.Windows.Forms.Panel();
-            this.buttonRelatorio = new System.Windows.Forms.Button();
-            this.buttonUltimo = new System.Windows.Forms.Button();
-            this.buttonProximo = new System.Windows.Forms.Button();
-            this.buttonPrimeiro = new System.Windows.Forms.Button();
-            this.buttonAnterior = new System.Windows.Forms.Button();
-            this.buttonPesquisa = new System.Windows.Forms.Button();
-            this.panelBotoesAcao = new System.Windows.Forms.Panel();
-            this.buttonSair = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.buttonExcluir = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonNovo = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.textBoxTituloBotoesAcao = new System.Windows.Forms.TextBox();
-            this.panelBotoesNavegacao.SuspendLayout();
-            this.panelBotoesAcao.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBase));
+            this.metroPanelBotoesControle = new MetroFramework.Controls.MetroPanel();
+            this.metroButtonSair = new MetroFramework.Controls.MetroButton();
+            this.metroButtonDesfazer = new MetroFramework.Controls.MetroButton();
+            this.metroButtonExcluir = new MetroFramework.Controls.MetroButton();
+            this.metroButtonSalvar = new MetroFramework.Controls.MetroButton();
+            this.metroButtonEditar = new MetroFramework.Controls.MetroButton();
+            this.metroButtonNovo = new MetroFramework.Controls.MetroButton();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroButtonProximoRegistro = new MetroFramework.Controls.MetroButton();
+            this.metroButtonRelatorio = new MetroFramework.Controls.MetroButton();
+            this.metroButtonRegistroAnterior = new MetroFramework.Controls.MetroButton();
+            this.metroButtonUltimoregistro = new MetroFramework.Controls.MetroButton();
+            this.metroButtonPesquisa = new MetroFramework.Controls.MetroButton();
+            this.metroButtonPrimeiroRegistro = new MetroFramework.Controls.MetroButton();
+            this.metroPanelBotoesControle.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelBotoesNavegacao
+            // metroPanelBotoesControle
             // 
-            this.panelBotoesNavegacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBotoesNavegacao.Controls.Add(this.buttonRelatorio);
-            this.panelBotoesNavegacao.Controls.Add(this.buttonUltimo);
-            this.panelBotoesNavegacao.Controls.Add(this.buttonProximo);
-            this.panelBotoesNavegacao.Controls.Add(this.buttonPrimeiro);
-            this.panelBotoesNavegacao.Controls.Add(this.buttonAnterior);
-            this.panelBotoesNavegacao.Controls.Add(this.buttonPesquisa);
-            this.panelBotoesNavegacao.Location = new System.Drawing.Point(2, 2);
-            this.panelBotoesNavegacao.Name = "panelBotoesNavegacao";
-            this.panelBotoesNavegacao.Size = new System.Drawing.Size(166, 89);
-            this.panelBotoesNavegacao.TabIndex = 0;
+            this.metroPanelBotoesControle.Controls.Add(this.metroButtonSair);
+            this.metroPanelBotoesControle.Controls.Add(this.metroButtonDesfazer);
+            this.metroPanelBotoesControle.Controls.Add(this.metroButtonExcluir);
+            this.metroPanelBotoesControle.Controls.Add(this.metroButtonSalvar);
+            this.metroPanelBotoesControle.Controls.Add(this.metroButtonEditar);
+            this.metroPanelBotoesControle.Controls.Add(this.metroButtonNovo);
+            this.metroPanelBotoesControle.HorizontalScrollbarBarColor = true;
+            this.metroPanelBotoesControle.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanelBotoesControle.HorizontalScrollbarSize = 10;
+            this.metroPanelBotoesControle.Location = new System.Drawing.Point(268, 60);
+            this.metroPanelBotoesControle.Name = "metroPanelBotoesControle";
+            this.metroPanelBotoesControle.Size = new System.Drawing.Size(480, 65);
+            this.metroPanelBotoesControle.TabIndex = 0;
+            this.metroPanelBotoesControle.VerticalScrollbarBarColor = true;
+            this.metroPanelBotoesControle.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanelBotoesControle.VerticalScrollbarSize = 10;
             // 
-            // buttonRelatorio
+            // metroButtonSair
             // 
-            this.buttonRelatorio.Image = global::Apresentacao.Properties.Resources.Report_Card_25px1;
-            this.buttonRelatorio.Location = new System.Drawing.Point(4, 47);
-            this.buttonRelatorio.Name = "buttonRelatorio";
-            this.buttonRelatorio.Size = new System.Drawing.Size(65, 37);
-            this.buttonRelatorio.TabIndex = 8;
-            this.buttonRelatorio.UseVisualStyleBackColor = true;
+            this.metroButtonSair.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.metroButtonSair.Location = new System.Drawing.Point(401, 3);
+            this.metroButtonSair.Name = "metroButtonSair";
+            this.metroButtonSair.Size = new System.Drawing.Size(75, 59);
+            this.metroButtonSair.TabIndex = 7;
+            this.metroButtonSair.Text = "Sair";
+            this.metroButtonSair.UseSelectable = true;
             // 
-            // buttonUltimo
+            // metroButtonDesfazer
             // 
-            this.buttonUltimo.Enabled = false;
-            this.buttonUltimo.Image = global::Apresentacao.Properties.Resources.Circled_Right_2_25px;
-            this.buttonUltimo.Location = new System.Drawing.Point(119, 3);
-            this.buttonUltimo.Name = "buttonUltimo";
-            this.buttonUltimo.Size = new System.Drawing.Size(38, 38);
-            this.buttonUltimo.TabIndex = 7;
-            this.buttonUltimo.UseVisualStyleBackColor = true;
+            this.metroButtonDesfazer.Enabled = false;
+            this.metroButtonDesfazer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.metroButtonDesfazer.Location = new System.Drawing.Point(320, 3);
+            this.metroButtonDesfazer.Name = "metroButtonDesfazer";
+            this.metroButtonDesfazer.Size = new System.Drawing.Size(75, 59);
+            this.metroButtonDesfazer.TabIndex = 6;
+            this.metroButtonDesfazer.Text = "Desfazer";
+            this.metroButtonDesfazer.UseSelectable = true;
             // 
-            // buttonProximo
+            // metroButtonExcluir
             // 
-            this.buttonProximo.Enabled = false;
-            this.buttonProximo.Image = global::Apresentacao.Properties.Resources.Down_2_25px;
-            this.buttonProximo.Location = new System.Drawing.Point(119, 47);
-            this.buttonProximo.Name = "buttonProximo";
-            this.buttonProximo.Size = new System.Drawing.Size(38, 38);
-            this.buttonProximo.TabIndex = 6;
-            this.buttonProximo.UseVisualStyleBackColor = true;
+            this.metroButtonExcluir.Enabled = false;
+            this.metroButtonExcluir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.metroButtonExcluir.Location = new System.Drawing.Point(239, 3);
+            this.metroButtonExcluir.Name = "metroButtonExcluir";
+            this.metroButtonExcluir.Size = new System.Drawing.Size(75, 59);
+            this.metroButtonExcluir.TabIndex = 5;
+            this.metroButtonExcluir.Text = "Excluir";
+            this.metroButtonExcluir.UseSelectable = true;
             // 
-            // buttonPrimeiro
+            // metroButtonSalvar
             // 
-            this.buttonPrimeiro.Enabled = false;
-            this.buttonPrimeiro.Image = global::Apresentacao.Properties.Resources.Circled_Left_2_25px;
-            this.buttonPrimeiro.Location = new System.Drawing.Point(75, 3);
-            this.buttonPrimeiro.Name = "buttonPrimeiro";
-            this.buttonPrimeiro.Size = new System.Drawing.Size(38, 38);
-            this.buttonPrimeiro.TabIndex = 5;
-            this.buttonPrimeiro.UseVisualStyleBackColor = true;
+            this.metroButtonSalvar.Enabled = false;
+            this.metroButtonSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.metroButtonSalvar.Location = new System.Drawing.Point(158, 3);
+            this.metroButtonSalvar.Name = "metroButtonSalvar";
+            this.metroButtonSalvar.Size = new System.Drawing.Size(75, 59);
+            this.metroButtonSalvar.TabIndex = 4;
+            this.metroButtonSalvar.Text = "Salvar";
+            this.metroButtonSalvar.UseSelectable = true;
             // 
-            // buttonAnterior
+            // metroButtonEditar
             // 
-            this.buttonAnterior.Enabled = false;
-            this.buttonAnterior.Image = global::Apresentacao.Properties.Resources.Down_3_25px;
-            this.buttonAnterior.Location = new System.Drawing.Point(75, 47);
-            this.buttonAnterior.Name = "buttonAnterior";
-            this.buttonAnterior.Size = new System.Drawing.Size(38, 38);
-            this.buttonAnterior.TabIndex = 4;
-            this.buttonAnterior.UseVisualStyleBackColor = true;
+            this.metroButtonEditar.Enabled = false;
+            this.metroButtonEditar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.metroButtonEditar.Location = new System.Drawing.Point(77, 3);
+            this.metroButtonEditar.Name = "metroButtonEditar";
+            this.metroButtonEditar.Size = new System.Drawing.Size(75, 59);
+            this.metroButtonEditar.TabIndex = 3;
+            this.metroButtonEditar.Text = "Editar";
+            this.metroButtonEditar.UseSelectable = true;
             // 
-            // buttonPesquisa
+            // metroButtonNovo
             // 
-            this.buttonPesquisa.Image = global::Apresentacao.Properties.Resources.Search_25px;
-            this.buttonPesquisa.Location = new System.Drawing.Point(4, 3);
-            this.buttonPesquisa.Name = "buttonPesquisa";
-            this.buttonPesquisa.Size = new System.Drawing.Size(65, 38);
-            this.buttonPesquisa.TabIndex = 3;
-            this.buttonPesquisa.UseVisualStyleBackColor = true;
+            this.metroButtonNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroButtonNovo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.metroButtonNovo.Location = new System.Drawing.Point(3, 3);
+            this.metroButtonNovo.Name = "metroButtonNovo";
+            this.metroButtonNovo.Size = new System.Drawing.Size(68, 59);
+            this.metroButtonNovo.TabIndex = 2;
+            this.metroButtonNovo.Text = "Novo";
+            this.metroButtonNovo.UseSelectable = true;
             // 
-            // panelBotoesAcao
+            // metroPanel1
             // 
-            this.panelBotoesAcao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBotoesAcao.Controls.Add(this.buttonSair);
-            this.panelBotoesAcao.Controls.Add(this.button5);
-            this.panelBotoesAcao.Controls.Add(this.buttonExcluir);
-            this.panelBotoesAcao.Controls.Add(this.buttonEditar);
-            this.panelBotoesAcao.Controls.Add(this.buttonNovo);
-            this.panelBotoesAcao.Controls.Add(this.buttonSalvar);
-            this.panelBotoesAcao.Location = new System.Drawing.Point(174, 2);
-            this.panelBotoesAcao.Name = "panelBotoesAcao";
-            this.panelBotoesAcao.Size = new System.Drawing.Size(400, 67);
-            this.panelBotoesAcao.TabIndex = 1;
+            this.metroPanel1.Controls.Add(this.metroButtonProximoRegistro);
+            this.metroPanel1.Controls.Add(this.metroButtonRelatorio);
+            this.metroPanel1.Controls.Add(this.metroButtonRegistroAnterior);
+            this.metroPanel1.Controls.Add(this.metroButtonUltimoregistro);
+            this.metroPanel1.Controls.Add(this.metroButtonPesquisa);
+            this.metroPanel1.Controls.Add(this.metroButtonPrimeiroRegistro);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(23, 60);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(239, 65);
+            this.metroPanel1.TabIndex = 1;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // buttonSair
+            // metroButtonProximoRegistro
             // 
-            this.buttonSair.Image = global::Apresentacao.Properties.Resources.Exit_25px;
-            this.buttonSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSair.Location = new System.Drawing.Point(338, 3);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(59, 59);
-            this.buttonSair.TabIndex = 3;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            this.metroButtonProximoRegistro.Enabled = false;
+            this.metroButtonProximoRegistro.Location = new System.Drawing.Point(159, 37);
+            this.metroButtonProximoRegistro.Name = "metroButtonProximoRegistro";
+            this.metroButtonProximoRegistro.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonProximoRegistro.TabIndex = 5;
+            this.metroButtonProximoRegistro.Text = "Proximo";
+            this.metroButtonProximoRegistro.UseSelectable = true;
             // 
-            // button5
+            // metroButtonRelatorio
             // 
-            this.button5.Enabled = false;
-            this.button5.Image = global::Apresentacao.Properties.Resources.Rotate_Left_25px;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(271, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(59, 59);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Desfazer";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
+            this.metroButtonRelatorio.Location = new System.Drawing.Point(3, 37);
+            this.metroButtonRelatorio.Name = "metroButtonRelatorio";
+            this.metroButtonRelatorio.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonRelatorio.TabIndex = 7;
+            this.metroButtonRelatorio.Text = "Relatório";
+            this.metroButtonRelatorio.UseSelectable = true;
             // 
-            // buttonExcluir
+            // metroButtonRegistroAnterior
             // 
-            this.buttonExcluir.Enabled = false;
-            this.buttonExcluir.Image = global::Apresentacao.Properties.Resources.Delete_25px;
-            this.buttonExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonExcluir.Location = new System.Drawing.Point(204, 3);
-            this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(59, 59);
-            this.buttonExcluir.TabIndex = 3;
-            this.buttonExcluir.Text = "Excluir";
-            this.buttonExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.metroButtonRegistroAnterior.Enabled = false;
+            this.metroButtonRegistroAnterior.Location = new System.Drawing.Point(81, 37);
+            this.metroButtonRegistroAnterior.Name = "metroButtonRegistroAnterior";
+            this.metroButtonRegistroAnterior.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonRegistroAnterior.TabIndex = 4;
+            this.metroButtonRegistroAnterior.Text = "Anterior";
+            this.metroButtonRegistroAnterior.UseSelectable = true;
             // 
-            // buttonEditar
+            // metroButtonUltimoregistro
             // 
-            this.buttonEditar.Enabled = false;
-            this.buttonEditar.Image = global::Apresentacao.Properties.Resources.Edit_25px;
-            this.buttonEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonEditar.Location = new System.Drawing.Point(70, 3);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(59, 59);
-            this.buttonEditar.TabIndex = 2;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.metroButtonUltimoregistro.Enabled = false;
+            this.metroButtonUltimoregistro.Location = new System.Drawing.Point(159, 3);
+            this.metroButtonUltimoregistro.Name = "metroButtonUltimoregistro";
+            this.metroButtonUltimoregistro.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonUltimoregistro.TabIndex = 3;
+            this.metroButtonUltimoregistro.Text = "Ultimo";
+            this.metroButtonUltimoregistro.UseSelectable = true;
             // 
-            // buttonNovo
+            // metroButtonPesquisa
             // 
-            this.buttonNovo.Image = global::Apresentacao.Properties.Resources.Plus_25px;
-            this.buttonNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonNovo.Location = new System.Drawing.Point(3, 3);
-            this.buttonNovo.Name = "buttonNovo";
-            this.buttonNovo.Size = new System.Drawing.Size(59, 59);
-            this.buttonNovo.TabIndex = 1;
-            this.buttonNovo.Text = "Novo";
-            this.buttonNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonNovo.UseVisualStyleBackColor = true;
-            this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
+            this.metroButtonPesquisa.Location = new System.Drawing.Point(3, 3);
+            this.metroButtonPesquisa.Name = "metroButtonPesquisa";
+            this.metroButtonPesquisa.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonPesquisa.TabIndex = 6;
+            this.metroButtonPesquisa.Text = "Pesquisa";
+            this.metroButtonPesquisa.UseSelectable = true;
             // 
-            // buttonSalvar
+            // metroButtonPrimeiroRegistro
             // 
-            this.buttonSalvar.Enabled = false;
-            this.buttonSalvar.Image = global::Apresentacao.Properties.Resources.Save_25px;
-            this.buttonSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSalvar.Location = new System.Drawing.Point(137, 3);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(59, 59);
-            this.buttonSalvar.TabIndex = 0;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
-            // 
-            // textBoxTituloBotoesAcao
-            // 
-            this.textBoxTituloBotoesAcao.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBoxTituloBotoesAcao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTituloBotoesAcao.Location = new System.Drawing.Point(174, 71);
-            this.textBoxTituloBotoesAcao.Name = "textBoxTituloBotoesAcao";
-            this.textBoxTituloBotoesAcao.Size = new System.Drawing.Size(400, 20);
-            this.textBoxTituloBotoesAcao.TabIndex = 2;
-            this.textBoxTituloBotoesAcao.Text = "Controles";
-            this.textBoxTituloBotoesAcao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.metroButtonPrimeiroRegistro.Enabled = false;
+            this.metroButtonPrimeiroRegistro.Location = new System.Drawing.Point(81, 3);
+            this.metroButtonPrimeiroRegistro.Name = "metroButtonPrimeiroRegistro";
+            this.metroButtonPrimeiroRegistro.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonPrimeiroRegistro.TabIndex = 2;
+            this.metroButtonPrimeiroRegistro.Text = "Primeiro";
+            this.metroButtonPrimeiroRegistro.UseSelectable = true;
             // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 332);
-            this.Controls.Add(this.textBoxTituloBotoesAcao);
-            this.Controls.Add(this.panelBotoesAcao);
-            this.Controls.Add(this.panelBotoesNavegacao);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.metroPanelBotoesControle);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBase";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBase";
-            this.Load += new System.EventHandler(this.FormBase_Load);
-            this.panelBotoesNavegacao.ResumeLayout(false);
-            this.panelBotoesAcao.ResumeLayout(false);
+            this.metroPanelBotoesControle.ResumeLayout(false);
+            this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelBotoesNavegacao;
-        private System.Windows.Forms.Panel panelBotoesAcao;
-        private System.Windows.Forms.TextBox textBoxTituloBotoesAcao;
-        public System.Windows.Forms.Button buttonUltimo;
-        public System.Windows.Forms.Button buttonPrimeiro;
-        public System.Windows.Forms.Button buttonPesquisa;
-        public System.Windows.Forms.Button button5;
-        public System.Windows.Forms.Button buttonExcluir;
-        public System.Windows.Forms.Button buttonEditar;
-        public System.Windows.Forms.Button buttonNovo;
-        public System.Windows.Forms.Button buttonSalvar;
-        public System.Windows.Forms.Button buttonAnterior;
-        public System.Windows.Forms.Button buttonProximo;
-        public System.Windows.Forms.Button buttonRelatorio;
-        public System.Windows.Forms.Button buttonSair;
+        private MetroFramework.Controls.MetroPanel metroPanelBotoesControle;
+        private MetroFramework.Controls.MetroButton metroButtonSair;
+        private MetroFramework.Controls.MetroButton metroButtonDesfazer;
+        private MetroFramework.Controls.MetroButton metroButtonExcluir;
+        private MetroFramework.Controls.MetroButton metroButtonSalvar;
+        private MetroFramework.Controls.MetroButton metroButtonEditar;
+        private MetroFramework.Controls.MetroButton metroButtonNovo;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroButton metroButtonProximoRegistro;
+        private MetroFramework.Controls.MetroButton metroButtonRelatorio;
+        private MetroFramework.Controls.MetroButton metroButtonRegistroAnterior;
+        private MetroFramework.Controls.MetroButton metroButtonUltimoregistro;
+        private MetroFramework.Controls.MetroButton metroButtonPesquisa;
+        private MetroFramework.Controls.MetroButton metroButtonPrimeiroRegistro;
     }
 }
