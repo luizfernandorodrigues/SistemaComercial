@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Utilitarios;
 
 namespace Apresentacao
 {
@@ -29,6 +30,21 @@ namespace Apresentacao
         {
 
 
+        }
+
+        private void metroButtonSalvar_Click(object sender, EventArgs e)
+        {
+            adicionar();
+        }
+
+        private void adicionar()
+        {
+
+
+        }
+
+        private void metroButtonNovo_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -28,11 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNome = new MetroFramework.Controls.MetroLabel();
             this.lblCodigo = new MetroFramework.Controls.MetroLabel();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCodigo = new MetroFramework.Controls.MetroTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // metroButtonSalvar
+            // 
+            this.metroButtonSalvar.Click += new System.EventHandler(this.metroButtonSalvar_Click);
+            // 
+            // metroButtonNovo
+            // 
+            this.metroButtonNovo.Click += new System.EventHandler(this.metroButtonNovo_Click);
             // 
             // lblNome
             // 
@@ -67,6 +78,7 @@
             this.txtNome.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNome.CustomButton.UseSelectable = true;
             this.txtNome.CustomButton.Visible = false;
+            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.paisBindingSource, "Nome", true));
             this.txtNome.Enabled = false;
             this.txtNome.Lines = new string[0];
             this.txtNome.Location = new System.Drawing.Point(79, 128);
@@ -85,6 +97,9 @@
             this.txtNome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtNome.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
+            // paisBindingSource
+            // 
+            // 
             // txtCodigo
             // 
             // 
@@ -99,6 +114,7 @@
             this.txtCodigo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCodigo.CustomButton.UseSelectable = true;
             this.txtCodigo.CustomButton.Visible = false;
+            this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.paisBindingSource, "Codigo", true));
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Lines = new string[0];
             this.txtCodigo.Location = new System.Drawing.Point(79, 159);
@@ -132,6 +148,7 @@
             this.Controls.SetChildIndex(this.lblCodigo, 0);
             this.Controls.SetChildIndex(this.txtNome, 0);
             this.Controls.SetChildIndex(this.txtCodigo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +159,6 @@
         private MetroFramework.Controls.MetroLabel lblCodigo;
         private MetroFramework.Controls.MetroTextBox txtNome;
         private MetroFramework.Controls.MetroTextBox txtCodigo;
+        private System.Windows.Forms.BindingSource paisBindingSource;
     }
 }

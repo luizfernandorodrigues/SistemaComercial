@@ -130,6 +130,7 @@
             this.metroButtonNovo.TabIndex = 2;
             this.metroButtonNovo.Text = "Novo";
             this.metroButtonNovo.UseSelectable = true;
+            this.metroButtonNovo.Click += new System.EventHandler(this.metroButtonNovo_Click);
             // 
             // metroPanel1
             // 
@@ -227,12 +228,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel metroPanelBotoesControle;
-        private MetroFramework.Controls.MetroButton metroButtonSair;
-        private MetroFramework.Controls.MetroButton metroButtonDesfazer;
-        private MetroFramework.Controls.MetroButton metroButtonExcluir;
-        private MetroFramework.Controls.MetroButton metroButtonSalvar;
-        private MetroFramework.Controls.MetroButton metroButtonEditar;
-        private MetroFramework.Controls.MetroButton metroButtonNovo;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton metroButtonProximoRegistro;
         private MetroFramework.Controls.MetroButton metroButtonRelatorio;
@@ -240,5 +235,11 @@
         private MetroFramework.Controls.MetroButton metroButtonUltimoregistro;
         private MetroFramework.Controls.MetroButton metroButtonPesquisa;
         private MetroFramework.Controls.MetroButton metroButtonPrimeiroRegistro;
+        public MetroFramework.Controls.MetroButton metroButtonSair;
+        public MetroFramework.Controls.MetroButton metroButtonDesfazer;
+        public MetroFramework.Controls.MetroButton metroButtonExcluir;
+        public MetroFramework.Controls.MetroButton metroButtonSalvar;
+        public MetroFramework.Controls.MetroButton metroButtonEditar;
+        public MetroFramework.Controls.MetroButton metroButtonNovo;
     }
 }

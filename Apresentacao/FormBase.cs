@@ -18,6 +18,9 @@ namespace Apresentacao
             InitializeComponent();
         }
 
-        
+        private void metroButtonNovo_Click(object sender, EventArgs e)
+        {
+            Util.habilitaCamposNovos(this);
+        }
     }
 }
