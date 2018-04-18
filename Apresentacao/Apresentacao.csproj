@@ -32,12 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -326,14 +320,6 @@
     <None Include="Imagens\Circled Right 2_25px.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Repositorio.Dao\AcessaDados.csproj">
-      <Project>{44026d4f-d313-4d37-acdc-d2efd858c1f5}</Project>
-      <Name>AcessaDados</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Repositorio.Entidades\Modelo.csproj">
-      <Project>{38afe106-5a24-4aae-86c3-c8a0337b0062}</Project>
-      <Name>Modelo</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Utilitarios\Utilitarios.csproj">
       <Project>{4b0f81ad-b28f-47ea-988f-2d7b7f2fb3fd}</Project>
       <Name>Utilitarios</Name>

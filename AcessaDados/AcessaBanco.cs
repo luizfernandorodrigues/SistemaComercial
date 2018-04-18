@@ -69,7 +69,7 @@ namespace AcessaDados
                 sqlCommand.CommandText = sql;
                 sqlCommand.CommandTimeout = 7200;
 
-                foreach(SqlParameter sqlParameter in sqlParametros)
+                foreach (SqlParameter sqlParameter in sqlParametros)
                 {
                     sqlCommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
                 }
