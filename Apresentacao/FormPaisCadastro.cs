@@ -6,14 +6,17 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Modelo;
-using MetroFramework;
+using Utilitarios;
+using AcessaDados;
+using System.Collections;
 
 namespace Apresentacao
 {
     public partial class FormPaisCadastro : Apresentacao.FormBase
     {
         Pais pais = new Pais();
-
+        PaisDados paisDados = new PaisDados();
+        int flag = 1;
         public FormPaisCadastro()
         {
             InitializeComponent();
@@ -21,19 +24,27 @@ namespace Apresentacao
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            this.salvar();
-            try
+            if (flag == 1)
             {
-                if (pais.Codigo.Length > 4 || pais.Codigo.Length < 4)
+                this.salvar();
+                this.valida();
+                try
                 {
-                    MetroMessageBox.Show(this, "Campo Código deve ter 4 digitos!","Notification", 100);
+                    paisDados.insert(pais);
+                    Util_Msg.aviso("Registro Gravado com Sucesso!");
+                    Util.botaoSalvar(this);
+                }
+                catch (Exception ex)
+                {
+                    Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                    return;
                 }
             }
-            catch (Exception)
+            else if (flag == 2)
             {
 
-                throw;
             }
+
         }
 
         private void FormPaisCadastro_Load(object sender, EventArgs e)
@@ -43,8 +54,30 @@ namespace Apresentacao
 
         private void salvar()
         {
-            pais.Codigo = txtCodigo.Text.Trim();
+            pais.Ukey = Guid.NewGuid();
             pais.Nome = txtNome.Text;
+            pais.Codigo = txtCodigo.Text.Trim();
+        }
+
+        private void valida()
+        {
+            if (string.IsNullOrEmpty(pais.Codigo))
+            {
+                Util_Msg.atencao("Preencha o Campo Código");
+                txtCodigo.Focus();
+                return;
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            flag = 1;
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            FormPaisPesquisa frm = new FormPaisPesquisa();
+            frm.Show();
         }
     }
 }

@@ -34,9 +34,17 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
             // btnSalvar
             // 
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // lblCodigo
             // 

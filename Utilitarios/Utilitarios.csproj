@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CepAberto.cs" />
     <Compile Include="CepAbertoResponse.cs" />
+    <Compile Include="CriaStringSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util_Delegate.cs" />
     <Compile Include="Util_Msg.cs" />

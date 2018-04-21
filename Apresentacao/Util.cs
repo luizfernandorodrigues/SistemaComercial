@@ -43,11 +43,209 @@ namespace Apresentacao
             Excluir = 3
         };
         /// <summary>
-        /// Função para habilitar o botão novo do form, quando chamada a função habilita
-        /// os campos e desabilita os botões desnecessarios para o estado de inclusão
+        /// Metodo responsavel por controlar os controles do form na hora que o botão novo é acionado
         /// </summary>
         /// <param name="ctrl"></param>
-        public static void habilitaCamposNovos(Control ctrl)
+        public static void botaoNovo(Control ctrl)
+        {
+            foreach (Control c in ctrl.Controls)
+            {
+                if (c is NumericUpDown)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is CheckBox)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is DateTimePicker)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is TextBox)
+                {
+                    c.Enabled = true;
+                    c.Text = "";
+                }
+                else if (c is RadioButton)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is ComboBox)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is MaskedTextBox)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is DataGridView)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is BindingNavigator)
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnEditar"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnNovo"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnEcluir"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnSair"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnProximo"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnAnterior"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnPrimeiroRegistro"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnUltimoRegistro"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnPesquisa"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnRelatorio"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnSalvar"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnDesfazer"))
+                {
+                    c.Enabled = true;
+                }
+                if (c.HasChildren)
+                {
+                    botaoNovo(c);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Função para desabilitar os botões quando o form entra em estado de inclusão
+        /// </summary>
+        /// <param name="ctr"></param>
+        public static void botaoSalvar(Control ctr)
+        {
+            foreach (Control c in ctr.Controls)
+            {
+                if (c is NumericUpDown)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is CheckBox)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is DateTimePicker)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is TextBox)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is RadioButton)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is ComboBox)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is MaskedTextBox)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is DataGridView)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is BindingNavigator)
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnEditar"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnNovo"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnEcluir"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnSair"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnProximo"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnAnterior"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnPrimeiroRegistro"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnUltimoRegistro"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnPesquisa"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnRelatorio"))
+                {
+                    c.Enabled = true;
+                }
+                else if (c is Button && c.Name.Equals("btnSalvar"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnDesfazer"))
+                {
+                    c.Enabled = false;
+                }
+                if (c.HasChildren)
+                {
+                    botaoSalvar(c);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Função para desabilitar os campos quando clicar no botão salvar
+        /// </summary>
+        /// <param name="ctrl"></param>
+        public static void botaoEdita(Control ctrl)
         {
             foreach (Control c in ctrl.Controls)
             {
@@ -87,126 +285,15 @@ namespace Apresentacao
                 {
                     c.Enabled = true;
                 }
-                if (c.HasChildren)
-                {
-                    habilitaCamposNovos(c);
-                }
-            }
-            habilitaBotoesNovo(ctrl);
-        }
-
-        /// <summary>
-        /// Função para desabilitar os botões quando o form entra em estado de inclusão
-        /// </summary>
-        /// <param name="ctr"></param>
-        public static void desabilitaBotoesNovo(Control ctr)
-        {
-            foreach (Control c in ctr.Controls)
-            {
-                if (c is Button && c.Name.Equals("buttonExcluir"))
+                else if (c is Button && c.Name.Equals("btnEditar"))
                 {
                     c.Enabled = false;
                 }
-                else if (c is Button && c.Name.Equals("buttonSair"))
+                else if (c is Button && c.Name.Equals("btnNovo"))
                 {
                     c.Enabled = false;
                 }
-                else if (c is Button && c.Name.Equals("buttonPesquisa"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("buttonProximo"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("buttonUltimo"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("buttonAnterior"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("buttonPrimeiro"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("buttonNovo"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("buttonEditar"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("buttonRelatorio"))
-                {
-                    c.Enabled = false;
-                }
-                if (c.HasChildren)
-                {
-                    desabilitaBotoesNovo(c);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Função para desabilitar os campos quando clicar no botão salvar
-        /// </summary>
-        /// <param name="ctrl"></param>
-        public static void desabilitaCamposNovo(Control ctrl)
-        {
-            foreach (Control c in ctrl.Controls)
-            {
-                if (c is NumericUpDown)
-                {
-                    c.Enabled = false;
-                }
-                else if (c is CheckBox)
-                {
-                    c.Enabled = false;
-                }
-                else if (c is DateTimePicker)
-                {
-                    c.Enabled = false;
-                }
-                else if (c is TextBox)
-                {
-                    c.Enabled = false;
-                }
-                else if (c is RadioButton)
-                {
-                    c.Enabled = false;
-                }
-                else if (c is ComboBox)
-                {
-                    c.Enabled = false;
-                }
-                else if (c is MaskedTextBox)
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button)
-                {
-                    c.Enabled = false;
-                }
-                if (c.HasChildren)
-                {
-                    desabilitaCamposNovo(c);
-                }
-            }
-            habilitaBotoesNovo(ctrl);
-        }
-
-        /// <summary>
-        /// Função para habilitar botões depois que clicar em salvar no modo de inclusão e alteração
-        /// </summary>
-        /// <param name="ctr"></param>
-        public static void habilitaBotoesNovo(Control ctr)
-        {
-            foreach (Control c in ctr.Controls)
-            {
-                if (c is Button && c.Name.Equals("btnExcluir"))
+                else if (c is Button && c.Name.Equals("btnEcluir"))
                 {
                     c.Enabled = false;
                 }
@@ -214,15 +301,7 @@ namespace Apresentacao
                 {
                     c.Enabled = false;
                 }
-                else if (c is Button && c.Name.Equals("btnPesquisa"))
-                {
-                    c.Enabled = false;
-                }
                 else if (c is Button && c.Name.Equals("btnProximo"))
-                {
-                    c.Enabled = false;
-                }
-                else if (c is Button && c.Name.Equals("bbtnUltimoRegistro"))
                 {
                     c.Enabled = false;
                 }
@@ -234,11 +313,11 @@ namespace Apresentacao
                 {
                     c.Enabled = false;
                 }
-                else if (c is Button && c.Name.Equals("btnNovo"))
+                else if (c is Button && c.Name.Equals("btnUltimoRegistro"))
                 {
                     c.Enabled = false;
                 }
-                else if (c is Button && c.Name.Equals("btnEditar"))
+                else if (c is Button && c.Name.Equals("btnPesquisa"))
                 {
                     c.Enabled = false;
                 }
@@ -256,40 +335,36 @@ namespace Apresentacao
                 }
                 if (c.HasChildren)
                 {
-                    habilitaBotoesNovo(c);
+                    botaoEdita(c);
                 }
             }
         }
 
         /// <summary>
-        /// função para criar senha criptografada, recebe a senha como string e retorna o hash como string para armazenar no banco
-        /// </summary>
-        /// <param name="senha"></param>
-        /// <returns></returns>
-        // public static string codificaSenha(string senha)
-        //{
-        //return Crypter.
-        //}
-
-        /// <summary>
-        /// Função para comparar senha, recebe o hash referente ao usuário e a senha informada return true ou false
-        /// </summary>
-        /// <param name="senha"></param>
-        /// <param name="hash"></param>
-        /// <returns></returns>
-        /*public static bool compara(string senha, string hash)
-        {
-           // return Crypter.CheckPassword(senha, hash);
-        }*/
-        /// <summary>
-        /// Função responsavel por desfazer o estado atual de um form
-        /// no momento somente desfaz em modo de adicionar registro.
-        /// necessita modificar pra gravar um objeto em memoria e depois recupera-lo se necessario
+        /// Função para habilitar botões depois que clicar em salvar no modo de inclusão e alteração
         /// </summary>
         /// <param name="ctr"></param>
+        public static void botaoExcluir(Control ctr)
+        {
+            foreach (Control c in ctr.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.Text = "";
+                }
+                else if (c is MaskedTextBox)
+                {
+                    c.Text = "";
+                }
+                if (c.HasChildren)
+                {
+                    botaoExcluir(c);
+                }
+            }
+        }
         public static void desfazerEstadoNovo(Control ctr)
         {
-            desabilitaCamposNovo(ctr);
+            botaoEdita(ctr);
 
             foreach (Control c in ctr.Controls)
             {
@@ -335,22 +410,11 @@ namespace Apresentacao
                 }
                 if (c.HasChildren)
                 {
-                    habilitaBotoesNovo(c);
+                    botaoExcluir(c);
                 }
             }
 
         }
 
-        public static void habilitaFormNovoRegistro(MetroForm form)
-        {
-
-            foreach (Control c in form.Controls)
-            {
-                if (c is MetroTextBox)
-                {
-                    c.Enabled = true;
-                }
-            }
-        }
     }
 }

@@ -44,7 +44,7 @@ namespace Apresentacao
 
         private void btnsalvar_Click(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void btnPesquisa_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Apresentacao
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            Util.habilitaCamposNovos(this);
+            Util.botaoNovo(this);
         }
 
         private void button6_Click(object sender, EventArgs e)
