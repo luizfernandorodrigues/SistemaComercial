@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MetroFramework.Controls;
 
 
 namespace Apresentacao
 {
-   public static class Util
+    public static class Util
     {
         public const string TITULO = "JMSoft";
         public static string VERSAO = "Versão 1.1.1";
@@ -86,16 +87,12 @@ namespace Apresentacao
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button)
-                {
-                    c.Enabled = true;
-                }
                 if (c.HasChildren)
                 {
                     habilitaCamposNovos(c);
                 }
             }
-            desabilitaBotoesNovo(ctrl);
+            habilitaBotoesNovo(ctrl);
         }
 
         /// <summary>
@@ -209,43 +206,51 @@ namespace Apresentacao
         {
             foreach (Control c in ctr.Controls)
             {
-                if (c is Button && c.Name.Equals("buttonExcluir"))
+                if (c is Button && c.Name.Equals("btnExcluir"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnSair"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnPesquisa"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnProximo"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("bbtnUltimoRegistro"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnAnterior"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnPrimeiroRegistro"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnNovo"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnEditar"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnRelatorio"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is Button && c.Name.Equals("btnSalvar"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonSair"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonPesquisa"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonProximo"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonUltimo"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonAnterior"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonPrimeiro"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonNovo"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonEditar"))
-                {
-                    c.Enabled = true;
-                }
-                else if (c is Button && c.Name.Equals("buttonRelatorio"))
+                else if (c is Button && c.Name.Equals("btnDesfazer"))
                 {
                     c.Enabled = true;
                 }
@@ -261,9 +266,9 @@ namespace Apresentacao
         /// </summary>
         /// <param name="senha"></param>
         /// <returns></returns>
-       // public static string codificaSenha(string senha)
+        // public static string codificaSenha(string senha)
         //{
-            //return Crypter.
+        //return Crypter.
         //}
 
         /// <summary>
@@ -336,6 +341,16 @@ namespace Apresentacao
 
         }
 
+        public static void habilitaFormNovoRegistro(MetroForm form)
+        {
 
+            foreach (Control c in form.Controls)
+            {
+                if (c is MetroTextBox)
+                {
+                    c.Enabled = true;
+                }
+            }
+        }
     }
 }

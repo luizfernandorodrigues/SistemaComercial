@@ -67,11 +67,11 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroPais.cs">
+    <Compile Include="FormPaisCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroPais.Designer.cs">
-      <DependentUpon>FormCadastroPais.cs</DependentUpon>
+    <Compile Include="FormPaisCadastro.Designer.cs">
+      <DependentUpon>FormPaisCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroPais.resx">
-      <DependentUpon>FormCadastroPais.cs</DependentUpon>
+    <EmbeddedResource Include="FormPaisCadastro.resx">
+      <DependentUpon>FormPaisCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -320,6 +320,14 @@
     <None Include="Imagens\Circled Right 2_25px.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AcessaDados\AcessaDados.csproj">
+      <Project>{4444f68d-765d-4b64-859e-cdc20decefb7}</Project>
+      <Name>AcessaDados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{43cc7c05-832a-4c25-99bf-b458eee65bd3}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilitarios\Utilitarios.csproj">
       <Project>{4b0f81ad-b28f-47ea-988f-2d7b7f2fb3fd}</Project>
       <Name>Utilitarios</Name>
