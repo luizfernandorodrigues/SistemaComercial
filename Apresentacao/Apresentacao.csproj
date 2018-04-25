@@ -349,6 +349,7 @@
     <None Include="Imagens\Binoculars_25px.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Imagens\Checklist_25px.png" />
     <Content Include="Tasks.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

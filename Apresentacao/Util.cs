@@ -32,6 +32,7 @@ namespace Apresentacao
         public const string BOTAO_SELECIONA_TUDO = "Selecionar Todos Registros!";
         public const string BOTAO_DESMARCA_TUDO = "Desmarcar Tudo!";
         public const string BOTAO_EXPORTAR_EXCEL = "Exportar Registros Selecionado para Excel!";
+        public const string BOTAO_INVERTE_SELECAO = "Inverter seleção!";
 
         public static Guid usuarioLogado;
         public static Guid empresaLogado;
