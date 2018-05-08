@@ -41,20 +41,36 @@ namespace Utilitarios
         }
 
         /// <summary>
-        /// Metodo para adicionar a cçlausula "where"
+        /// Metodo para adicionar a clausula "where"
         /// </summary>
         /// <param name="nome"></param>
         /// <param name="valor"></param>
-        public void addWhere(string nome, string valor)
+        public void addWhere(string nome, string valor, string operador, string valorEntre)
         {
+            string valorFinal = "";
+
+            switch (operador)
+            {
+                //iniciado por
+                case "1":
+                    valorFinal += "%";
+                    break;
+                //igual
+                case "2":
+                    valorFinal = "=" + valor;
+                    break;
+                //case "3":
+
+
+            }
             if (where.Count == 0)
             {
-                where.Add("WHERE " + nome + "'=" + valor + "'");
+                where.Add("WHERE " + nome + "'" + operador + valor + "'");
                 return;
             }
             else
             {
-                where.Add(where[where.Count - 1] + " AND " + nome + " = '" + valor + "'");
+                where.Add(where[where.Count - 1] + " AND " + nome + operador + "'" + valor + "'");
             }
         }
 
@@ -93,6 +109,32 @@ namespace Utilitarios
             }
             sql.Append(")");
 
+            return sql.ToString();
+        }
+
+        public String select()
+        {
+            sql = new StringBuilder();
+            sql.Append("SELECT ");
+            //loop para adicionar todos campos do select
+            for (int i = 0; i < campos.Count; i++)
+            {
+                if (i == campos.Count - 1)
+                {
+                    sql.Append(campos[i]);
+                }
+                else
+                {
+                    sql.Append(campos[i] + ",");
+                }
+            }
+
+            sql.Append(" FROM " + tabela);
+
+            if (where.Count != 0)
+            {
+                sql.Append(" " + where[where.Count - 1]);
+            }
             return sql.ToString();
         }
 

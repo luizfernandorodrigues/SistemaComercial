@@ -27,11 +27,10 @@ namespace Apresentacao
 
             //setar tool tip nos botoes 
             toolTipPesquisaPais.SetToolTip(btnCarregaFiltrado, Util.BOTAO_CARREGA_SELECIONADO);
-            toolTipPesquisaPais.SetToolTip(btnInverteSelecao, Util.BOTAO_DESMARCA_TUDO);
+            toolTipPesquisaPais.SetToolTip(btnInverteSelecao, Util.BOTAO_INVERTE_SELECAO);
             toolTipPesquisaPais.SetToolTip(btnExportaExcel, Util.BOTAO_EXPORTAR_EXCEL);
-            toolTipPesquisaPais.SetToolTip(btnDesmarcaTudo, Util.BOTAO_INVERTE_SELECAO);
+            toolTipPesquisaPais.SetToolTip(btnDesmarcaTudo, Util.BOTAO_DESMARCA_TUDO);
             toolTipPesquisaPais.SetToolTip(btnMarcaTudo, Util.BOTAO_SELECIONA_TUDO);
-
         }
 
         private void cbxNome_SelectionChangeCommitted(object sender, EventArgs e)

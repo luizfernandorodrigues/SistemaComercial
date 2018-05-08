@@ -23,7 +23,7 @@ namespace Apresentacao
         {
 
             List<PreencheComboBox> lst = new List<PreencheComboBox>();
-            lst.Add(new PreencheComboBox { descricao = "Iniciado Por", valor = "StartsWith" });
+            lst.Add(new PreencheComboBox { descricao = "Iniciado Por", valor = "1" });
             lst.Add(new PreencheComboBox { descricao = "Igual", valor = "2" });
             lst.Add(new PreencheComboBox { descricao = "Entre", valor = "3" });
             lst.Add(new PreencheComboBox { descricao = "Maior Igual", valor = "4" });
