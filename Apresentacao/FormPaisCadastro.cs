@@ -31,7 +31,7 @@ namespace Apresentacao
                 try
                 {
                     paisDados.insert(pais);
-                    Util_Msg.aviso("Registro Gravado com Sucesso!");
+                    Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
                     Util.botaoSalvar(this);
                 }
                 catch (Exception ex)
