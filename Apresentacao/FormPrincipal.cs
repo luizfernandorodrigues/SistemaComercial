@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilitarios;
 
 namespace Apresentacao
 {
@@ -21,6 +22,16 @@ namespace Apresentacao
         {
             FormPaisCadastro frm = new FormPaisCadastro();
             frm.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult resposta = Util_Msg.simNao("Deseja Realmente Sair do Sistema?");
+            if (resposta == DialogResult.Yes)
+            {
+                Dispose();
+            }
+            return;
         }
     }
 }

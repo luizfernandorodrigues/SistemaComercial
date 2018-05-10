@@ -45,7 +45,7 @@ namespace Utilitarios
         /// </summary>
         /// <param name="nome"></param>
         /// <param name="valor"></param>
-        public void addWhere(string nome, string valor, string operador, string valorEntre)
+        public void addWhere(string campo, string valor, string operador, string valorEntre)
         {
             string valorFinal = "";
 
@@ -53,46 +53,46 @@ namespace Utilitarios
             {
                 //iniciado por
                 case "1":
-                    valorFinal = " LIKE '" + valor + "%'";
+                    valorFinal = " LIKE '" + "@" + valor + "%'";
                     break;
                 //igual
                 case "2":
-                    valorFinal = "=" + valor;
+                    valorFinal = " = " + "@" + valor;
                     break;
                 //entre
                 case "3":
-                    valorFinal = "BETWEEN" + valor + " AND " + valorEntre;
+                    valorFinal = " BETWEEN " + "@" + valor + " AND " + "@" + valorEntre;
                     break;
                 //maior igual
                 case "4":
-                    valorFinal = " >= " + valor;
+                    valorFinal = " >= " + "@" + valor;
                     break;
                 //menor igual
                 case "5":
-                    valorFinal = " <= " + valor;
+                    valorFinal = " <= " + "@" + valor;
                     break;
                 //contem
                 case "6":
-                    valorFinal = "'%" + valor + "'%";
+                    valorFinal = " '%" + "@" + valor + "'%";
                     break;
                 //diferente
                 case "7":
-                    valorFinal = "<>" + valor;
+                    valorFinal = " <> " + "@" + valor;
                     break;
                 //terminado por
                 case "8":
-                    valorFinal = "'%" + valor;
+                    valorFinal = " '%" + "@" + valor;
                     break;
 
             }
             if (where.Count == 0)
             {
-                where.Add(" WHERE " + nome + "'" + valorFinal + "'");
+                where.Add(" WHERE " + campo + valorFinal);
                 return;
             }
             else
             {
-                where.Add(where[where.Count - 1] + " AND " + nome + operador + "'" + valorFinal + "'");
+                where.Add(where[where.Count - 1] + " AND " + campo + valorFinal);
             }
         }
 
@@ -122,11 +122,11 @@ namespace Utilitarios
             {
                 if (i == valores.Count - 1)
                 {
-                    sql.Append(valores[i]);
+                    sql.Append("@"+valores[i]);
                 }
                 else
                 {
-                    sql.Append(valores[i] + ",");
+                    sql.Append("@"+valores[i] + ",");
                 }
             }
             sql.Append(")");

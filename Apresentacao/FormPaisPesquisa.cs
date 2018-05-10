@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AcessaDados;
+using Modelo;
 
 namespace Apresentacao
 {
@@ -45,5 +47,11 @@ namespace Apresentacao
             }
         }
 
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            PaisDados paisDados = new PaisDados();
+            PaisCollection pais = new PaisCollection();
+            pais = paisDados.pesquisa(txtNome.Text, txtCodigo.Text, cbxNome.SelectedValue.ToString(), cbxCodigo.SelectedValue.ToString(), txtNomeEntre.Text, txtCodigoEntre.Text);
+        }
     }
 }
