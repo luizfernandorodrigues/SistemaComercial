@@ -53,24 +53,46 @@ namespace Utilitarios
             {
                 //iniciado por
                 case "1":
-                    valorFinal += "%";
+                    valorFinal = " LIKE '" + valor + "%'";
                     break;
                 //igual
                 case "2":
                     valorFinal = "=" + valor;
                     break;
-                //case "3":
-
+                //entre
+                case "3":
+                    valorFinal = "BETWEEN" + valor + " AND " + valorEntre;
+                    break;
+                //maior igual
+                case "4":
+                    valorFinal = " >= " + valor;
+                    break;
+                //menor igual
+                case "5":
+                    valorFinal = " <= " + valor;
+                    break;
+                //contem
+                case "6":
+                    valorFinal = "'%" + valor + "'%";
+                    break;
+                //diferente
+                case "7":
+                    valorFinal = "<>" + valor;
+                    break;
+                //terminado por
+                case "8":
+                    valorFinal = "'%" + valor;
+                    break;
 
             }
             if (where.Count == 0)
             {
-                where.Add("WHERE " + nome + "'" + operador + valor + "'");
+                where.Add(" WHERE " + nome + "'" + valorFinal + "'");
                 return;
             }
             else
             {
-                where.Add(where[where.Count - 1] + " AND " + nome + operador + "'" + valor + "'");
+                where.Add(where[where.Count - 1] + " AND " + nome + operador + "'" + valorFinal + "'");
             }
         }
 
