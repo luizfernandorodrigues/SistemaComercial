@@ -51,10 +51,6 @@ namespace Utilitarios
 
             switch (operador)
             {
-                //iniciado por
-                case "1":
-                    valorFinal = " LIKE '" + "@" + valor + "%'";
-                    break;
                 //igual
                 case "2":
                     valorFinal = " = " + "@" + valor;
@@ -71,23 +67,17 @@ namespace Utilitarios
                 case "5":
                     valorFinal = " <= " + "@" + valor;
                     break;
-                //contem
-                case "6":
-                    valorFinal = " '%" + "@" + valor + "'%";
-                    break;
                 //diferente
                 case "7":
                     valorFinal = " <> " + "@" + valor;
                     break;
-                //terminado por
-                case "8":
-                    valorFinal = " '%" + "@" + valor;
+                default:
+                    valorFinal = " LIKE " + "@" + valor;
                     break;
-
             }
             if (where.Count == 0)
             {
-                where.Add(" WHERE " + campo + valorFinal);
+                where.Add("WHERE " + campo + valorFinal);
                 return;
             }
             else
@@ -122,11 +112,11 @@ namespace Utilitarios
             {
                 if (i == valores.Count - 1)
                 {
-                    sql.Append("@"+valores[i]);
+                    sql.Append("@" + valores[i]);
                 }
                 else
                 {
-                    sql.Append("@"+valores[i] + ",");
+                    sql.Append("@" + valores[i] + ",");
                 }
             }
             sql.Append(")");

@@ -28,7 +28,7 @@ namespace AcessaDados
         {
             try
             {
-                criaString.addCampo(UKEY,UKEY);
+                criaString.addCampo(UKEY, UKEY);
                 criaString.addCampo(DESCRICAO_PAIS, DESCRICAO_PAIS);
                 criaString.addCampo(CODIGO_PAIS, CODIGO_PAIS);
                 string sql = criaString.insert();
@@ -57,6 +57,34 @@ namespace AcessaDados
             criaString.addCampo(CODIGO_PAIS);
             criaString.addWhere(DESCRICAO_PAIS, DESCRICAO_PAIS, operadorNome, valorEntreNome);
             criaString.addWhere(CODIGO_PAIS, CODIGO_PAIS, operadorCodigo, valorEntreCodigo);
+
+            //colocar "%' quando for like o operador 1,6,8
+            switch (operadorCodigo)
+            {
+                //iniciado por
+                case "1":
+                    codigo = "'" + codigo + "%'";
+                    break;
+                case "6":
+                    codigo = "'%" + codigo + "%'";
+                    break;
+                case "8":
+                    codigo = "'%" + codigo + "'";
+                    break;
+            }
+            //colcoar % no nome quando for like
+            switch (nome)
+            {
+                case "1":
+                    nome = "'" + nome + "%'";
+                    break;
+                case "6":
+                    nome = "'%" + nome + "%'";
+                    break;
+                case "8":
+                    nome = "'%" + nome + "'";
+                    break;
+            }
             string select = criaString.select();
             acessaBanco.criaConexao();
             acessaBanco.limpaParametros();
