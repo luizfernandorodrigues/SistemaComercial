@@ -24,6 +24,7 @@ namespace Apresentacao
 
         private void FormPaisPesquisa_Load(object sender, EventArgs e)
         {
+            dgvPais.AutoGenerateColumns = false;
             combo.combo(cbxCodigo);
             combo.combo(cbxNome);
 
@@ -52,6 +53,8 @@ namespace Apresentacao
             PaisDados paisDados = new PaisDados();
             PaisCollection pais = new PaisCollection();
             pais = paisDados.pesquisa(txtNome.Text, txtCodigo.Text, cbxNome.SelectedValue.ToString(), cbxCodigo.SelectedValue.ToString(), txtNomeEntre.Text, txtCodigoEntre.Text);
+            var lista = pais.OrderBy(p => p.Nome).ToList();
+            dgvPais.DataSource = lista;
         }
     }
 }

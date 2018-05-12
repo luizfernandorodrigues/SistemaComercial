@@ -51,45 +51,62 @@ namespace AcessaDados
         {
             DataTable dataTable = new DataTable();
             PaisCollection paisCollection = new PaisCollection();
+            string select = "";
             string ukey = "";
-            criaString.addCampo(UKEY);
-            criaString.addCampo(DESCRICAO_PAIS);
-            criaString.addCampo(CODIGO_PAIS);
-            criaString.addWhere(DESCRICAO_PAIS, DESCRICAO_PAIS, operadorNome, valorEntreNome);
-            criaString.addWhere(CODIGO_PAIS, CODIGO_PAIS, operadorCodigo, valorEntreCodigo);
+            //verifico se não passa parametro executo select * from
+            if (nome.Equals("") && codigo.Equals(""))
+            {
+                select = "select ukey, descricaoPais,codigoPais from tblPais";
+            }
+            else
+            {
+                criaString.addCampo(UKEY);
+                criaString.addCampo(DESCRICAO_PAIS);
+                criaString.addCampo(CODIGO_PAIS);
+                //verifico se os campos não esta vazio
+                if (!nome.Equals(""))
+                {
+                    //colcoar % no nome quando for like
+                    switch (operadorNome)
+                    {
+                        case "1":
+                            nome = "'" + nome + "%'";
+                            break;
+                        case "6":
+                            nome = "'%" + nome + "%'";
+                            break;
+                        case "8":
+                            nome = "'%" + nome + "'";
+                            break;
+                    }
 
-            //colocar "%' quando for like o operador 1,6,8
-            switch (operadorCodigo)
-            {
-                //iniciado por
-                case "1":
-                    codigo = "'" + codigo + "%'";
-                    break;
-                case "6":
-                    codigo = "'%" + codigo + "%'";
-                    break;
-                case "8":
-                    codigo = "'%" + codigo + "'";
-                    break;
+                }
+                if (!codigo.Equals(""))
+                {
+                    //colocar "%' quando for like o operador 1,6,8
+                    switch (operadorCodigo)
+                    {
+                        //iniciado por
+                        case "1":
+                            codigo = "'" + codigo + "%'";
+                            break;
+                        case "6":
+                            codigo = "'%" + codigo + "%'";
+                            break;
+                        case "8":
+                            codigo = "'%" + codigo + "'";
+                            break;
+                    }
+                }
+                criaString.addWhere(DESCRICAO_PAIS, DESCRICAO_PAIS, operadorNome, valorEntreNome);
+                criaString.addWhere(CODIGO_PAIS, CODIGO_PAIS, operadorCodigo, valorEntreCodigo);
+                select = criaString.select();
             }
-            //colcoar % no nome quando for like
-            switch (nome)
-            {
-                case "1":
-                    nome = "'" + nome + "%'";
-                    break;
-                case "6":
-                    nome = "'%" + nome + "%'";
-                    break;
-                case "8":
-                    nome = "'%" + nome + "'";
-                    break;
-            }
-            string select = criaString.select();
             acessaBanco.criaConexao();
             acessaBanco.limpaParametros();
-            acessaBanco.adicionaParametros(DESCRICAO_PAIS, nome);
-            acessaBanco.adicionaParametros(CODIGO_PAIS, codigo);
+            //teste de nomes de parametros pode ser aqui o erro
+            acessaBanco.adicionaParametros("@"+DESCRICAO_PAIS, nome);
+            acessaBanco.adicionaParametros("@"+CODIGO_PAIS, codigo);
 
             dataTable = acessaBanco.ExecutaConsulta(CommandType.Text, select);
 
