@@ -17,6 +17,7 @@ namespace Apresentacao
         Pais pais = new Pais();
         PaisDados paisDados = new PaisDados();
         int flag = 1;
+        public static PaisCollection paisCollection;
         public FormPaisCadastro()
         {
             InitializeComponent();
@@ -76,7 +77,7 @@ namespace Apresentacao
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            FormPaisPesquisa frm = new FormPaisPesquisa();
+            FormPaisPesquisa frm = new FormPaisPesquisa(this);
             frm.Show();
         }
     }

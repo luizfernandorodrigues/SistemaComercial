@@ -38,6 +38,9 @@
             this.txtNomeEntre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.dgvPais = new System.Windows.Forms.DataGridView();
+            this.seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExportaExcel = new System.Windows.Forms.Button();
             this.btnDesmarcaTudo = new System.Windows.Forms.Button();
             this.btnInverteSelecao = new System.Windows.Forms.Button();
@@ -47,9 +50,6 @@
             this.toolTipPesquisaPais = new System.Windows.Forms.ToolTip(this.components);
             this.lblNomePesquisa = new System.Windows.Forms.Label();
             this.lblCodigoPesquisa = new System.Windows.Forms.Label();
-            this.seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPais)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +123,26 @@
             this.dgvPais.Size = new System.Drawing.Size(672, 314);
             this.dgvPais.TabIndex = 4;
             // 
+            // seleciona
+            // 
+            this.seleciona.HeaderText = "SL";
+            this.seleciona.Name = "seleciona";
+            this.seleciona.Width = 50;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // codigo
+            // 
+            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            // 
             // btnExportaExcel
             // 
             this.btnExportaExcel.Image = global::Apresentacao.Properties.Resources.Microsoft_Excel_25px;
@@ -192,6 +212,7 @@
             this.btnCarregaFiltrado.Text = "Carrega Filtrados";
             this.btnCarregaFiltrado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCarregaFiltrado.UseVisualStyleBackColor = true;
+            this.btnCarregaFiltrado.Click += new System.EventHandler(this.btnCarregaFiltrado_Click);
             // 
             // toolTipPesquisaPais
             // 
@@ -215,26 +236,6 @@
             this.lblCodigoPesquisa.Size = new System.Drawing.Size(40, 13);
             this.lblCodigoPesquisa.TabIndex = 12;
             this.lblCodigoPesquisa.Text = "Código";
-            // 
-            // seleciona
-            // 
-            this.seleciona.HeaderText = "SL";
-            this.seleciona.Name = "seleciona";
-            this.seleciona.Width = 50;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.DataPropertyName = "nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // codigo
-            // 
-            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
             // 
             // FormPaisPesquisa
             // 

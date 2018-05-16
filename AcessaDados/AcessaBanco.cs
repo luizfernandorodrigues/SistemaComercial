@@ -53,7 +53,8 @@ namespace AcessaDados
 
         public void adicionaParametros(string nomeParametro, object valorParametro)
         {
-            this.sqlParametros.Add(new SqlParameter(nomeParametro, valorParametro));
+            sqlParametros.Add(new SqlParameter(nomeParametro, valorParametro));
+            
         }
 
         public void executaManipulacao(CommandType commandType, string sql)

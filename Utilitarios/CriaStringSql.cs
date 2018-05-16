@@ -45,44 +45,61 @@ namespace Utilitarios
         /// </summary>
         /// <param name="nome"></param>
         /// <param name="valor"></param>
-        public void addWhere(string campo, string valor, string operador, string valorEntre)
+        public void addWhere(string coluna, string parametroColuna, string operador, string valorEntre, string valor)
         {
             string valorFinal = "";
-
             switch (operador)
             {
+
                 //igual
                 case "2":
-                    valorFinal = " = " + "@" + valor;
+                    valorFinal = " = " + "@" + parametroColuna;
                     break;
                 //entre
                 case "3":
-                    valorFinal = " BETWEEN " + "@" + valor + " AND " + "@" + valorEntre;
+                    valorFinal = " BETWEEN " + "@" + parametroColuna + " AND " + "@" + valorEntre;
                     break;
                 //maior igual
                 case "4":
-                    valorFinal = " >= " + "@" + valor;
+                    valorFinal = " >= " + "@" + parametroColuna;
                     break;
                 //menor igual
                 case "5":
-                    valorFinal = " <= " + "@" + valor;
+                    valorFinal = " <= " + "@" + parametroColuna;
                     break;
                 //diferente
                 case "7":
-                    valorFinal = " <> " + "@" + valor;
+                    valorFinal = " <> " + "@" + parametroColuna;
                     break;
                 default:
-                    valorFinal = " LIKE " + "@" + valor;
+                    valorFinal = " LIKE " + "@" + parametroColuna;
                     break;
             }
-            if (where.Count == 0)
+            //se for nulo o valor da coluna add where 1 = 1
+            if (valor.Equals(""))
             {
-                where.Add("WHERE " + campo + valorFinal);
-                return;
+                if (where.Count == 0)
+                {
+                    where.Add("WHERE 1 = 1");
+                    return;
+                }
+                else
+                {
+                    where.Add(where[where.Count - 1] + " AND 1 = 1");
+                }
             }
+            //se tiver valor preenche normal
             else
             {
-                where.Add(where[where.Count - 1] + " AND " + campo + valorFinal);
+                if (where.Count == 0)
+                {
+                    where.Add("WHERE RTRIM(" + coluna + ")" + valorFinal);
+                    return;
+                }
+                else
+                {
+                    where.Add(where[where.Count - 1] + " AND RTRIM(" + coluna + ")" + valorFinal);
+                }
             }
         }
 

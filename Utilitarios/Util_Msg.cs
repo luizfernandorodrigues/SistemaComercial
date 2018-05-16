@@ -30,6 +30,7 @@ namespace Utilitarios
         /// <summary>
         /// Função para mostrar um aviso ao usuario
         /// recebe uma string com o texto desejado
+        /// Ex: "Registro Cadastradi com Sucesso"
         /// </summary>
         /// <param name="texto"></param>
         public static void aviso(string texto)

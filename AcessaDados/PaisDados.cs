@@ -70,13 +70,13 @@ namespace AcessaDados
                     switch (operadorNome)
                     {
                         case "1":
-                            nome = "'" + nome + "%'";
+                            nome = nome + "%";
                             break;
                         case "6":
-                            nome = "'%" + nome + "%'";
+                            nome = "%" + nome + "%";
                             break;
                         case "8":
-                            nome = "'%" + nome + "'";
+                            nome = "%" + nome;
                             break;
                     }
 
@@ -88,22 +88,24 @@ namespace AcessaDados
                     {
                         //iniciado por
                         case "1":
-                            codigo = "'" + codigo + "%'";
+                            codigo = codigo + "%";
                             break;
                         case "6":
-                            codigo = "'%" + codigo + "%'";
+                            codigo = "%" + codigo + "%";
                             break;
                         case "8":
-                            codigo = "'%" + codigo + "'";
+                            codigo = "%" + codigo;
                             break;
                     }
                 }
-                criaString.addWhere(DESCRICAO_PAIS, DESCRICAO_PAIS, operadorNome, valorEntreNome);
-                criaString.addWhere(CODIGO_PAIS, CODIGO_PAIS, operadorCodigo, valorEntreCodigo);
+                criaString.addWhere(DESCRICAO_PAIS, DESCRICAO_PAIS, operadorNome, valorEntreNome, nome);
+                criaString.addWhere(CODIGO_PAIS, CODIGO_PAIS, operadorCodigo, valorEntreCodigo, codigo);
                 select = criaString.select();
             }
             acessaBanco.criaConexao();
             acessaBanco.limpaParametros();
+            Console.WriteLine(nome);
+            Console.WriteLine(codigo);
             //teste de nomes de parametros pode ser aqui o erro
             acessaBanco.adicionaParametros("@"+DESCRICAO_PAIS, nome);
             acessaBanco.adicionaParametros("@"+CODIGO_PAIS, codigo);

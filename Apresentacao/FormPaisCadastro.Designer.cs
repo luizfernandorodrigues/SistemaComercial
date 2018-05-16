@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.bindingSourcePais = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePais)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPesquisa
@@ -96,6 +99,7 @@
             this.Controls.SetChildIndex(this.lblNome, 0);
             this.Controls.SetChildIndex(this.txtNome, 0);
             this.Controls.SetChildIndex(this.txtCodigo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,7 +109,8 @@
 
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtCodigo;
+        public System.Windows.Forms.BindingSource bindingSourcePais;
+        public System.Windows.Forms.TextBox txtNome;
+        public System.Windows.Forms.TextBox txtCodigo;
     }
 }
