@@ -39,7 +39,6 @@ namespace AcessaDados
                 acessaBanco.adicionaParametros(CODIGO_PAIS, pais.Codigo);
 
                 acessaBanco.executaManipulacao(CommandType.Text, sql);
-
             }
             catch
             {
@@ -47,6 +46,16 @@ namespace AcessaDados
             }
         }
 
+        /// <summary>
+        /// Método de pesquisa de pais, retorna uma coleçao de pais
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="codigo"></param>
+        /// <param name="operadorNome"></param>
+        /// <param name="operadorCodigo"></param>
+        /// <param name="valorEntreNome"></param>
+        /// <param name="valorEntreCodigo"></param>
+        /// <returns></returns>
         public PaisCollection pesquisa(string nome, string codigo, string operadorNome, string operadorCodigo, string valorEntreNome, string valorEntreCodigo)
         {
             DataTable dataTable = new DataTable();
@@ -107,8 +116,8 @@ namespace AcessaDados
             Console.WriteLine(nome);
             Console.WriteLine(codigo);
             //teste de nomes de parametros pode ser aqui o erro
-            acessaBanco.adicionaParametros("@"+DESCRICAO_PAIS, nome);
-            acessaBanco.adicionaParametros("@"+CODIGO_PAIS, codigo);
+            acessaBanco.adicionaParametros("@" + DESCRICAO_PAIS, nome);
+            acessaBanco.adicionaParametros("@" + CODIGO_PAIS, codigo);
 
             dataTable = acessaBanco.ExecutaConsulta(CommandType.Text, select);
 
@@ -122,6 +131,31 @@ namespace AcessaDados
                 paisCollection.Add(pais);
             }
             return paisCollection;
+        }
+
+        /// <summary>
+        /// Método para fazer o update do registro no banco de dados
+        /// </summary>
+        /// <param name="pais"></param>
+        public void update(Pais pais)
+        {
+            try
+            {
+                criaString.addCampo(DESCRICAO_PAIS, DESCRICAO_PAIS);
+                criaString.addCampo(CODIGO_PAIS, CODIGO_PAIS);
+                criaString.addWhere(UKEY, UKEY);
+                string sql = criaString.Update();
+                acessaBanco.criaConexao();
+                acessaBanco.limpaParametros();
+                acessaBanco.adicionaParametros("@"+DESCRICAO_PAIS, pais.Nome);
+                acessaBanco.adicionaParametros("@"+CODIGO_PAIS, pais.Codigo);
+                acessaBanco.adicionaParametros("@"+UKEY, pais.Ukey);
+                acessaBanco.executaManipulacao(CommandType.Text, sql);
+            }
+            catch
+            {
+                throw new Exception();
+            }
         }
     }
 }

@@ -106,17 +106,24 @@ namespace Apresentacao
         {
             PaisCollection p = new PaisCollection();
             p = carregaFiltrado();
-            
-            if(p.Count == 0)
+
+            if (p.Count == 0)
             {
                 Util_Msg.atencao("Nenhum Registro Selecionado!");
                 return;
-            } else
+            }
+            else
             {
                 FormPaisCadastro.paisCollection = p;
                 form.bindingSourcePais.DataSource = p;
-                form.txtCodigo.DataBindings.Add("Text",form.bindingSourcePais,"codigo");
-                form.txtNome.DataBindings.Add("Text", form.bindingSourcePais, "nome");
+                form.bindingSourcePais.MoveFirst();
+                //verifico se ja possui associação com o binding
+                //evitar erro de tentar associar duas vezes o controle com o binding
+                if (!form.bindingSourcePais.Contains(txtCodigo))
+                {
+                    form.txtNome.DataBindings.Add("Text", form.bindingSourcePais, "nome");
+                    form.txtCodigo.DataBindings.Add("Text", form.bindingSourcePais, "codigo");
+                }
                 form.btnAnterior.Enabled = true;
                 form.btnEditar.Enabled = true;
                 form.btnExcluir.Enabled = true;

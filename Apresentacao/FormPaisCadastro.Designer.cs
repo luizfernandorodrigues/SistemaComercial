@@ -37,6 +37,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePais)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnProximo
+            // 
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnPrimeiroRegistro
+            // 
+            this.btnPrimeiroRegistro.Click += new System.EventHandler(this.btnPrimeiroRegistro_Click);
+            // 
+            // btnUltimoRegistro
+            // 
+            this.btnUltimoRegistro.Click += new System.EventHandler(this.btnUltimoRegistro_Click);
+            // 
             // btnPesquisa
             // 
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
@@ -44,6 +60,10 @@
             // btnSalvar
             // 
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNovo
             // 
@@ -94,7 +114,6 @@
             this.Name = "FormPaisCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pais";
-            this.Load += new System.EventHandler(this.FormPaisCadastro_Load);
             this.Controls.SetChildIndex(this.lblCodigo, 0);
             this.Controls.SetChildIndex(this.lblNome, 0);
             this.Controls.SetChildIndex(this.txtNome, 0);

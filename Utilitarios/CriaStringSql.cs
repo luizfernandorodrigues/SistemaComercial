@@ -103,6 +103,24 @@ namespace Utilitarios
             }
         }
 
+        //Método para adicionar clausula where update
+        public void addWhere(string campo, string valor)
+        {
+            if (where.Count == 0)
+            {
+                where.Add("WHERE " + campo + " = " + "@" + valor);
+                return;
+            }
+            else
+            {
+                where.Add(where[where.Count - 1] + " AND " + campo + " = " + "@" + valor);
+            }
+        }
+
+        /// <summary>
+        /// Método de criar a string de insert
+        /// </summary>
+        /// <returns></returns>
         public string insert()
         {
             sql = new StringBuilder();
@@ -137,10 +155,15 @@ namespace Utilitarios
                 }
             }
             sql.Append(")");
-
+            where.Clear();
+            campos.Clear();
             return sql.ToString();
         }
 
+        /// <summary>
+        /// Método de criar a string de select **somente uma tabela**
+        /// </summary>
+        /// <returns></returns>
         public String select()
         {
             sql = new StringBuilder();
@@ -164,9 +187,42 @@ namespace Utilitarios
             {
                 sql.Append(" " + where[where.Count - 1]);
             }
+            where.Clear();
+            campos.Clear();
             return sql.ToString();
         }
 
+        /// <summary>
+        /// Método de criar a string sql para fazer o update
+        /// </summary>
+        /// <returns></returns>
+        public string Update()
+        {
+            sql = new StringBuilder();
+
+            sql.Append("UPDATE ");
+            sql.Append(tabela);
+            sql.Append(" SET ");
+
+            //Loop para adicionar todos os campos e valores definidos
+            for (int i = 0; i < campos.Count; i++)
+            {
+                sql.Append(campos[i] + " = ");
+                sql.Append("@" + valores[i]);
+
+                if (i != campos.Count - 1)
+                {
+                    sql.Append(",");
+                }
+            }
+            if (where.Count != 0)
+            {
+                sql.Append(" " + where[where.Count - 1]);
+            }
+            where.Clear();
+            campos.Clear();
+            return sql.ToString();
+         }
 
     }
 }
