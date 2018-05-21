@@ -360,55 +360,67 @@ namespace Apresentacao
                 }
             }
         }
+
         public static void desfazerEstadoNovo(Control ctr)
         {
             botaoEdita(ctr);
 
             foreach (Control c in ctr.Controls)
             {
-                if (c is Button && c.Name.Equals("buttonSair"))
+                if (c is Button && c.Name.Equals("btnSair"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonPesquisa"))
+                else if (c is Button && c.Name.Equals("btnPesquisa"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonProximo"))
+                else if (c is Button && c.Name.Equals("btnProximo"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonUltimo"))
+                else if (c is Button && c.Name.Equals("btnUltimoRegistro"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonAnterior"))
+                else if (c is Button && c.Name.Equals("btnAnterior"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonPrimeiro"))
+                else if (c is Button && c.Name.Equals("btnPrimeiroRegistro"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonNovo"))
+                else if (c is Button && c.Name.Equals("btnNovo"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonRelatorio"))
+                else if (c is Button && c.Name.Equals("btnRelatorio"))
                 {
                     c.Enabled = true;
                 }
-                else if (c is Button && c.Name.Equals("buttonExcluir"))
+                else if (c is Button && c.Name.Equals("btnExcluir"))
                 {
                     c.Enabled = false;
                 }
-                else if (c is Button && c.Name.Equals("buttonEditar"))
+                else if (c is Button && c.Name.Equals("btnEditar"))
+                {
+                    c.Enabled = false;
+                } else if(c is Button && c.Name.Equals("btnSalvar"))
+                {
+                    c.Enabled = false;
+                }
+                else if (c is TextBox)
+                {
+                    c.Enabled = false;
+                    c.Text = "";
+                } else if(c is MaskedTextBox)
                 {
                     c.Enabled = false;
                 }
                 if (c.HasChildren)
                 {
-                    botaoExcluir(c);
+                    desfazerEstadoNovo(c);
                 }
             }
 

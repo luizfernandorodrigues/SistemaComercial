@@ -80,19 +80,19 @@
             // parceirosToolStripMenuItem
             // 
             this.parceirosToolStripMenuItem.Name = "parceirosToolStripMenuItem";
-            this.parceirosToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.parceirosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.parceirosToolStripMenuItem.Text = "Parceiros";
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empresaToolStripMenuItem.Text = "Empresa";
             // 
             // vendedorToolStripMenuItem
             // 
             this.vendedorToolStripMenuItem.Name = "vendedorToolStripMenuItem";
-            this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vendedorToolStripMenuItem.Text = "Vendedor";
             // 
             // logradouroToolStripMenuItem
@@ -103,31 +103,32 @@
             this.estadoToolStripMenuItem,
             this.paisToolStripMenuItem});
             this.logradouroToolStripMenuItem.Name = "logradouroToolStripMenuItem";
-            this.logradouroToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.logradouroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logradouroToolStripMenuItem.Text = "Logradouro";
             // 
             // cepToolStripMenuItem
             // 
             this.cepToolStripMenuItem.Name = "cepToolStripMenuItem";
-            this.cepToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cepToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cepToolStripMenuItem.Text = "Cep";
             // 
             // cidadeToolStripMenuItem
             // 
             this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cidadeToolStripMenuItem.Text = "Cidade";
             // 
             // estadoToolStripMenuItem
             // 
             this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estadoToolStripMenuItem.Text = "Estado";
+            this.estadoToolStripMenuItem.Click += new System.EventHandler(this.estadoToolStripMenuItem_Click);
             // 
             // paisToolStripMenuItem
             // 
             this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
-            this.paisToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.paisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.paisToolStripMenuItem.Text = "Pais";
             this.paisToolStripMenuItem.Click += new System.EventHandler(this.paisToolStripMenuItem_Click);
             // 

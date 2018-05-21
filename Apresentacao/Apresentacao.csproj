@@ -55,6 +55,12 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEstadoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstadoCadastro.Designer.cs">
+      <DependentUpon>FormEstadoCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPaisCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Validacao.cs" />
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstadoCadastro.resx">
+      <DependentUpon>FormEstadoCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPaisCadastro.resx">
       <DependentUpon>FormPaisCadastro.cs</DependentUpon>
@@ -338,6 +347,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagens\Checklist_25px.png" />
+    <None Include="Imagens\Circled Chevron Right_10px.png" />
+    <None Include="Imagens\Circled Chevron Right_15px.png" />
     <Content Include="Tasks.txt" />
   </ItemGroup>
   <ItemGroup>

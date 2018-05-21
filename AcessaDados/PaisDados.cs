@@ -170,7 +170,7 @@ namespace AcessaDados
                 string sql = criaString.delete();
                 acessaBanco.criaConexao();
                 acessaBanco.limpaParametros();
-                acessaBanco.adicionaParametros("@", pais.Ukey);
+                acessaBanco.adicionaParametros("@"+UKEY, pais.Ukey);
                 acessaBanco.executaManipulacao(CommandType.Text, sql);
             }
             catch

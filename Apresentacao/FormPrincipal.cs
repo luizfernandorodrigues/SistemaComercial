@@ -33,5 +33,11 @@ namespace Apresentacao
             }
             return;
         }
+
+        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEstadoCadastro frm = new FormEstadoCadastro();
+            frm.Show();
+        }
     }
 }

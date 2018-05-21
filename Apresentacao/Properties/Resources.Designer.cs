@@ -213,6 +213,26 @@ namespace Apresentacao.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Circled_Chevron_Right_10px {
+            get {
+                object obj = ResourceManager.GetObject("Circled Chevron Right_10px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Circled_Chevron_Right_15px {
+            get {
+                object obj = ResourceManager.GetObject("Circled Chevron Right_15px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Circled_Left_2_25px {
             get {
                 object obj = ResourceManager.GetObject("Circled Left 2_25px", resourceCulture);

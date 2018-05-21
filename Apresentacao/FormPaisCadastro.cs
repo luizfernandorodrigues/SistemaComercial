@@ -115,7 +115,7 @@ namespace Apresentacao
         /// <param name="e"></param>
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            FormPaisPesquisa frm = new FormPaisPesquisa(this);
+            FormPaisPesquisa frm = new FormPaisPesquisa(this, null);
             frm.Show();
             txtNome.DataBindings.Clear();
             txtCodigo.DataBindings.Clear();
@@ -224,6 +224,11 @@ namespace Apresentacao
         /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if(bindingSourcePais.Count == 0)
+            {
+                Util_Msg.atencao("Não há Registro Para Alterar!");
+                return;
+            }
             editar();
         }
 
@@ -253,6 +258,11 @@ namespace Apresentacao
         /// <param name="e"></param>
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (bindingSourcePais.Count == 0)
+            {
+                Util_Msg.atencao("Não há Registro Para Excluir!");
+                return;
+            }
             pais = bindingSourcePais.Current as Pais;
             try
             {
@@ -272,6 +282,20 @@ namespace Apresentacao
             {
                 Util_Msg.erro("Não Foi Possivel Excluir o Registro! \n" + ex.Message);
             }
+        }
+
+        /// <summary>
+        /// evento do botão desfazer do form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDesfazer_Click(object sender, EventArgs e)
+        {
+            if(flag == 1)
+            {
+                Util.desfazerEstadoNovo(this);
+            }
+            
         }
     }
 }

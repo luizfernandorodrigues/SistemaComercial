@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estado.cs" />
+    <Compile Include="EsadoCollection.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="PaisCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

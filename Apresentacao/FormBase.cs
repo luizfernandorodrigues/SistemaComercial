@@ -60,6 +60,7 @@ namespace Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             Util.botaoNovo(this);
+            textBox1.Text = "Controles";
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -70,6 +71,11 @@ namespace Apresentacao
         public bool b_grava()
         {
             return false;
+        }
+
+        private void btnDesfazer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

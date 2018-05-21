@@ -57,6 +57,10 @@
             // 
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
+            // btnDesfazer
+            // 
+            this.btnDesfazer.Click += new System.EventHandler(this.btnDesfazer_Click);
+            // 
             // btnExcluir
             // 
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);

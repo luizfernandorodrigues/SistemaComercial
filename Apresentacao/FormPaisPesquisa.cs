@@ -18,7 +18,7 @@ namespace Apresentacao
     {
         PreencheComboBox combo = new PreencheComboBox();
         FormPaisCadastro form;
-        public FormPaisPesquisa(FormPaisCadastro frm)
+        public FormPaisPesquisa(FormPaisCadastro frm, Form form)
         {
             InitializeComponent();
             form = frm;
