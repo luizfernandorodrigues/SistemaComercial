@@ -245,5 +245,33 @@ namespace Apresentacao
             pais.Nome = txtNome.Text.Trim();
             pais.Codigo = txtCodigo.Text.Trim();
         }
+
+        /// <summary>
+        /// Evernto do botão excluir do form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            pais = bindingSourcePais.Current as Pais;
+            try
+            {
+                paisDados.delete(pais);
+                Util_Msg.aviso("Registro Excluido com Sucesso!");
+                Util.botaoExcluir(this);
+
+                //removo o item atual da lista
+                bindingSourcePais.RemoveCurrent();
+                //passo para o proximo registro do bind caso exista 
+                if (bindingSourcePais.Count > 1)
+                {
+                    bindingSourcePais.MoveNext();
+                }
+            }
+            catch (Exception ex)
+            {
+                Util_Msg.erro("Não Foi Possivel Excluir o Registro! \n" + ex.Message);
+            }
+        }
     }
 }

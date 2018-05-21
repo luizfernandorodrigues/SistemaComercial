@@ -157,5 +157,26 @@ namespace AcessaDados
                 throw new Exception();
             }
         }
+
+        /// <summary>
+        /// Método para realizar o delete no banco de dados
+        /// </summary>
+        /// <param name="pais"></param>
+        public void delete (Pais pais)
+        {
+            try
+            {
+                criaString.addWhere(UKEY, UKEY);
+                string sql = criaString.delete();
+                acessaBanco.criaConexao();
+                acessaBanco.limpaParametros();
+                acessaBanco.adicionaParametros("@", pais.Ukey);
+                acessaBanco.executaManipulacao(CommandType.Text, sql);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
     }
 }

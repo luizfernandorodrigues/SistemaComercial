@@ -222,7 +222,24 @@ namespace Utilitarios
             where.Clear();
             campos.Clear();
             return sql.ToString();
-         }
+        }
+
+        /// <summary>
+        /// Método para criar string sql para fazer o delete
+        /// </summary>
+        /// <returns></returns>
+        public string delete()
+        {
+            sql = new StringBuilder();
+            sql.Append("DELETE FROM ");
+            sql.Append(tabela);
+
+            if (where.Count != 0)
+            {
+                sql.Append(" " + where[where.Count - 1]);
+            }
+            return sql.ToString();
+        }
 
     }
 }
