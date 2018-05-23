@@ -41,7 +41,7 @@ namespace Apresentacao
             Excluir = 3
         };
         /// <summary>
-        /// Metodo responsavel por controlar os controles do form na hora que o botão novo é acionado
+        /// Metodo responsavel por controlar os controles do formPais na hora que o botão novo é acionado
         /// </summary>
         /// <param name="ctrl"></param>
         public static void botaoNovo(Control ctrl)
@@ -141,7 +141,7 @@ namespace Apresentacao
         }
 
         /// <summary>
-        /// Função para desabilitar os botões quando o form entra em estado de inclusão
+        /// Função para desabilitar os botões quando o formPais entra em estado de inclusão
         /// </summary>
         /// <param name="ctr"></param>
         public static void botaoSalvar(Control ctr)

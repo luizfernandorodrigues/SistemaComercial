@@ -39,6 +39,10 @@
             this.btnPesquisaPais = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // btnNovo
             // 
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -93,7 +97,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 7;
-            this.txtCodigo.Enter += new System.EventHandler(this.txtCodigo_Enter);
             // 
             // txtDescricao
             // 
@@ -120,6 +123,7 @@
             this.btnPesquisaPais.Size = new System.Drawing.Size(33, 21);
             this.btnPesquisaPais.TabIndex = 11;
             this.btnPesquisaPais.UseVisualStyleBackColor = true;
+            this.btnPesquisaPais.Click += new System.EventHandler(this.btnPesquisaPais_Click);
             // 
             // FormEstadoCadastro
             // 
@@ -158,9 +162,9 @@
         private System.Windows.Forms.TextBox txtSigla;
         private System.Windows.Forms.Label lblSigla;
         private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnAbreRegistro;
         private System.Windows.Forms.Button btnPesquisaPais;
+        public System.Windows.Forms.TextBox txtCodigo;
+        public System.Windows.Forms.TextBox txtDescricao;
     }
 }

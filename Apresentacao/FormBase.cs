@@ -18,8 +18,8 @@ namespace Apresentacao
         }
 
         /// <summary>
-        /// Evento load ocorre quando o form é carregado
-        /// **Criado Rotina de setar as dicas quando o mouse passa sobre os botões de controles e navegação do form
+        /// Evento load ocorre quando o formPais é carregado
+        /// **Criado Rotina de setar as dicas quando o mouse passa sobre os botões de controles e navegação do formPais
         ///     Autor: Luiz Fernando
         ///     Data : 20/04/2018
         ///   Versão : 1.0.1

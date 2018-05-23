@@ -5,30 +5,91 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Modelo;
+using AcessaDados;
+using Utilitarios;
 
 namespace Apresentacao
 {
     public partial class FormEstadoCadastro : Apresentacao.FormBase
     {
         private int flag = 1;
-        Guid pais_ukey;
+        public static Guid pais_ukey;
 
         public FormEstadoCadastro()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Evento do Botão Novo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNovo_Click(object sender, EventArgs e)
         {
             flag = 1;
             txtDescricao.Enabled = false;
         }
 
-        private void txtCodigo_Enter(object sender, EventArgs e)
+        /// <summary>
+        /// Evento do Botão de pesquisa pais
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPesquisaPais_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text.Equals("?"))
+            FormPaisPesquisa frm = new FormPaisPesquisa(null, this);
+            frm.Show();
+        }
+
+        /// <summary>
+        /// Evento do Botão Salvar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (flag == 1)
             {
-                FormPaisPesquisa frm = new FormPaisPesquisa(null, this);
+                valida();
+                gravar();
+            }
+        }
+
+        /// <summary>
+        /// Método para preencher o objeto estado
+        /// </summary>
+        private void gravar()
+        {
+            Estado estado = new Estado();
+            estado.Pais_ukey = pais_ukey;
+            estado.SiglaEstado = txtSigla.Text.Trim();
+            estado.DescricaoEstado = txtNome.Text.Trim();
+        }
+
+        /// <summary>
+        /// Método para validar os campos do form
+        /// </summary>
+        private void valida()
+        {
+            //verifica nome
+            if (txtNome.Text.Trim().Equals(""))
+            {
+                Util_Msg.atencao("Informe o Nome do Estado!");
+                return;
+            }
+            //verifica sigla
+            if (txtSigla.Text.Trim().Equals(""))
+            {
+                Util_Msg.atencao("Informe uma Sigla!");
+                return;
+            }
+            //verifica pais
+            if (pais_ukey == Guid.Empty)
+            {
+                Util_Msg.atencao("Selecione um Pais!");
+                return;
             }
         }
     }

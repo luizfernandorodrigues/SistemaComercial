@@ -17,11 +17,15 @@ namespace Apresentacao
     public partial class FormPaisPesquisa : Form
     {
         PreencheComboBox combo = new PreencheComboBox();
-        FormPaisCadastro form;
-        public FormPaisPesquisa(FormPaisCadastro frm, Form form)
+        FormPaisCadastro formPais;
+        FormEstadoCadastro formEstado;
+        string descricaoPais;
+        string codigoPais;
+        public FormPaisPesquisa(FormPaisCadastro formPaisCadastro, FormEstadoCadastro formEstadoCadastro)
         {
             InitializeComponent();
-            form = frm;
+            formPais = formPaisCadastro;
+            formEstado = formEstadoCadastro;
         }
 
         private void FormPaisPesquisa_Load(object sender, EventArgs e)
@@ -79,27 +83,56 @@ namespace Apresentacao
             }
             catch (Exception ex)
             {
-                Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                Util_Msg.erro("Não Foi Possivel Efetuar a Pesquisa!\n Causa: " + ex.Message);
                 return;
             }
 
         }
 
+        /// <summary>
+        /// Método para carregar pais selecionado
+        /// </summary>
+        /// <returns></returns>
         private PaisCollection carregaFiltrado()
         {
             PaisCollection paisCollection = new PaisCollection();
             Pais pais = new Pais();
 
-            for (int i = 0; i < dgvPais.Rows.Count; i++)
+            //se o form de estado for null pega form de pais
+            if (formEstado == null)
             {
-                if (Convert.ToBoolean(dgvPais.Rows[i].Cells[0].Value))
+                for (int i = 0; i < dgvPais.Rows.Count; i++)
                 {
-                    pais = dgvPais.Rows[i].DataBoundItem as Pais;
-                    paisCollection.Add(pais);
+                    if (Convert.ToBoolean(dgvPais.Rows[i].Cells[0].Value))
+                    {
+                        pais = dgvPais.Rows[i].DataBoundItem as Pais;
+                        paisCollection.Add(pais);
+                    }
                 }
-
+                return paisCollection;
             }
-            return paisCollection;
+
+            // se form pais for nulo pega form de estado
+            else if (formPais == null)
+            {
+                dgvPais.MultiSelect = false;
+                for (int i = 0; i < dgvPais.Rows.Count; i++)
+                {
+                    if (Convert.ToBoolean(dgvPais.Rows[i].Cells[0].Value))
+                    {
+                        pais = dgvPais.Rows[i].DataBoundItem as Pais;
+                        paisCollection.Add(pais);
+                        descricaoPais = pais.Nome;
+                        codigoPais = pais.Codigo;
+                        FormEstadoCadastro.pais_ukey = pais.Ukey;
+                    }
+                }
+                return paisCollection;
+            }
+            else
+            {
+                return null;
+            }
         }
         //evento do botão carregar filtrados
         private void btnCarregaFiltrado_Click(object sender, EventArgs e)
@@ -114,23 +147,34 @@ namespace Apresentacao
             }
             else
             {
-                FormPaisCadastro.paisCollection = p;
-                form.bindingSourcePais.DataSource = p;
-                form.bindingSourcePais.MoveFirst();
-                //verifico se ja possui associação com o binding
-                //evitar erro de tentar associar duas vezes o controle com o binding
-                if (!form.bindingSourcePais.Contains(txtCodigo))
+                if (formEstado == null)
                 {
-                    form.txtNome.DataBindings.Add("Text", form.bindingSourcePais, "nome");
-                    form.txtCodigo.DataBindings.Add("Text", form.bindingSourcePais, "codigo");
+                    FormPaisCadastro.paisCollection = p;
+                    formPais.bindingSourcePais.DataSource = p;
+                    formPais.bindingSourcePais.MoveFirst();
+                    //verifico se ja possui associação com o binding
+                    //evitar erro de tentar associar duas vezes o controle com o binding
+                    if (!formPais.bindingSourcePais.Contains(txtCodigo))
+                    {
+                        formPais.txtNome.DataBindings.Add("Text", formPais.bindingSourcePais, "nome");
+                        formPais.txtCodigo.DataBindings.Add("Text", formPais.bindingSourcePais, "codigo");
+                    }
+                    formPais.btnAnterior.Enabled = true;
+                    formPais.btnEditar.Enabled = true;
+                    formPais.btnExcluir.Enabled = true;
+                    formPais.btnPrimeiroRegistro.Enabled = true;
+                    formPais.btnProximo.Enabled = true;
+                    formPais.btnUltimoRegistro.Enabled = true;
+                    this.Dispose();
                 }
-                form.btnAnterior.Enabled = true;
-                form.btnEditar.Enabled = true;
-                form.btnExcluir.Enabled = true;
-                form.btnPrimeiroRegistro.Enabled = true;
-                form.btnProximo.Enabled = true;
-                form.btnUltimoRegistro.Enabled = true;
-                this.Dispose();
+                //se for estado que chamou
+                else if (formPais == null)
+                {
+                    formEstado.txtCodigo.Text = codigoPais;
+                    formEstado.txtDescricao.Text = descricaoPais;
+                    Dispose();
+                }
+
             }
         }
     }

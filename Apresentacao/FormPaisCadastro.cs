@@ -109,7 +109,7 @@ namespace Apresentacao
         }
 
         /// <summary>
-        /// Evento do botão pesquisa, abre o form de pesquisa
+        /// Evento do botão pesquisa, abre o formPais de pesquisa
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -252,7 +252,7 @@ namespace Apresentacao
         }
 
         /// <summary>
-        /// Evernto do botão excluir do form
+        /// Evernto do botão excluir do formPais
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -285,7 +285,7 @@ namespace Apresentacao
         }
 
         /// <summary>
-        /// evento do botão desfazer do form
+        /// evento do botão desfazer do formPais
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
