@@ -16,6 +16,9 @@ namespace Apresentacao
         private int flag = 1;
         public static Guid pais_ukey;
 
+        Estado estado = new Estado();
+        EstadoDados estadoDados = new EstadoDados();
+
         public FormEstadoCadastro()
         {
             InitializeComponent();
@@ -54,6 +57,12 @@ namespace Apresentacao
             {
                 valida();
                 gravar();
+                estadoDados.insert(estado);
+                Util.botaoSalvar(this);
+                Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
+            } else if (flag == 2)
+            {
+
             }
         }
 
@@ -62,8 +71,8 @@ namespace Apresentacao
         /// </summary>
         private void gravar()
         {
-            Estado estado = new Estado();
             estado.Pais_ukey = pais_ukey;
+            estado.Ukey = Guid.NewGuid();
             estado.SiglaEstado = txtSigla.Text.Trim();
             estado.DescricaoEstado = txtNome.Text.Trim();
         }
@@ -91,6 +100,12 @@ namespace Apresentacao
                 Util_Msg.atencao("Selecione um Pais!");
                 return;
             }
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            FormEstadoPesquisa frm = new FormEstadoPesquisa();
+            frm.Show();
         }
     }
 }

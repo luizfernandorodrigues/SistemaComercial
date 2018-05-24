@@ -39,6 +39,10 @@
             this.btnPesquisaPais = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
             // btnSalvar
             // 
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);

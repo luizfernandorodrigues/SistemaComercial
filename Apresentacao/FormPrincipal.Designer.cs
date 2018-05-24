@@ -102,24 +102,28 @@
             this.cidadeToolStripMenuItem,
             this.estadoToolStripMenuItem,
             this.paisToolStripMenuItem});
+            this.logradouroToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Worldwide_Location_25px;
             this.logradouroToolStripMenuItem.Name = "logradouroToolStripMenuItem";
             this.logradouroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logradouroToolStripMenuItem.Text = "Logradouro";
             // 
             // cepToolStripMenuItem
             // 
+            this.cepToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Marker_25px;
             this.cepToolStripMenuItem.Name = "cepToolStripMenuItem";
             this.cepToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cepToolStripMenuItem.Text = "Cep";
             // 
             // cidadeToolStripMenuItem
             // 
+            this.cidadeToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Point_Objects_25px;
             this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
             this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cidadeToolStripMenuItem.Text = "Cidade";
             // 
             // estadoToolStripMenuItem
             // 
+            this.estadoToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Map_Marker_25px;
             this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
             this.estadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estadoToolStripMenuItem.Text = "Estado";
@@ -127,6 +131,7 @@
             // 
             // paisToolStripMenuItem
             // 
+            this.paisToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Globe_25px;
             this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
             this.paisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.paisToolStripMenuItem.Text = "Pais";

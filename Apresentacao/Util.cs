@@ -232,6 +232,10 @@ namespace Apresentacao
                 {
                     c.Enabled = false;
                 }
+                else if (c is Button && c.Name.Equals("btnSalvar"))
+                {
+                    c.Enabled = true;
+                }
                 if (c.HasChildren)
                 {
                     botaoSalvar(c);
