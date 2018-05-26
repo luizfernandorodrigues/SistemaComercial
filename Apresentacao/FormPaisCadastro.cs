@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Modelo;
 using Utilitarios;
 using AcessaDados;
-using System.Collections;
+
 
 namespace Apresentacao
 {
@@ -34,17 +34,23 @@ namespace Apresentacao
             //se for inserir
             if (flag == 1)
             {
-                this.salvar();
-                this.valida();
-                try
+                salvar();
+                if (valida())
                 {
-                    paisDados.insert(pais);
-                    Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
-                    Util.botaoSalvar(this);
+                    try
+                    {
+                        paisDados.insert(pais);
+                        Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
+                        Util.botaoSalvar(this);
+                    }
+                    catch (Exception ex)
+                    {
+                        Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                        return;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
                     return;
                 }
             }
@@ -52,18 +58,25 @@ namespace Apresentacao
             else if (flag == 2)
             {
                 alterar();
-                valida();
-                try
+                if (valida())
                 {
-                    paisDados.update(pais);
-                    Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
-                    Util.botaoSalvar(this);
+                    try
+                    {
+                        paisDados.update(pais);
+                        Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
+                        Util.botaoSalvar(this);
+                    }
+                    catch (Exception ex)
+                    {
+                        Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                        return;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
                     return;
                 }
+
             }
         }
 
@@ -80,22 +93,23 @@ namespace Apresentacao
         /// <summary>
         /// Método para fazer a validação dos campos obrigatório da tela
         /// </summary>
-        private void valida()
+        private bool valida()
         {
             //valida se o nome preenchido
             if (string.IsNullOrEmpty(pais.Nome))
             {
                 Util_Msg.atencao("Preencha o Campo Nome");
                 txtNome.Focus();
-                return;
+                return false;
             }
             //valida se o código foi preenchido
             if (string.IsNullOrEmpty(pais.Codigo))
             {
                 Util_Msg.atencao("Preencha o Campo Código");
                 txtCodigo.Focus();
-                return;
+                return false;
             }
+            return true;
         }
 
         /// <summary>
@@ -224,7 +238,7 @@ namespace Apresentacao
         /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if(bindingSourcePais.Count == 0)
+            if (bindingSourcePais.Count == 0)
             {
                 Util_Msg.atencao("Não há Registro Para Alterar!");
                 return;
@@ -291,11 +305,11 @@ namespace Apresentacao
         /// <param name="e"></param>
         private void btnDesfazer_Click(object sender, EventArgs e)
         {
-            if(flag == 1)
+            if (flag == 1)
             {
                 Util.desfazerEstadoNovo(this);
             }
-            
+
         }
     }
 }

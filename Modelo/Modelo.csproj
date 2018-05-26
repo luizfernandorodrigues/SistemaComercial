@@ -44,6 +44,8 @@
     <Compile Include="EsadoCollection.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="PaisCollection.cs" />
+    <Compile Include="Pesquisa.cs" />
+    <Compile Include="PesquisaCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

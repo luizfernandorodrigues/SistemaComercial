@@ -39,5 +39,11 @@ namespace Apresentacao
             FormEstadoCadastro frm = new FormEstadoCadastro();
             frm.Show();
         }
+
+        private void cadastroDePesquisaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastroPesquisa frm = new FormCadastroPesquisa();
+            frm.Show();
+        }
     }
 }

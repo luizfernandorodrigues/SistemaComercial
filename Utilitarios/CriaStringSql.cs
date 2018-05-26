@@ -241,5 +241,23 @@ namespace Utilitarios
             return sql.ToString();
         }
 
+        public void addWherePesquisa(string nome, string valor)
+        {
+            if (where.Count == 0)
+
+            {
+                where.Add("WHERE " + nome + " = " + "@" + valor);
+                return;
+            }
+            else
+            {
+                where.Add(where[where.Count - 1] + " AND " + nome + " = " + "@" + valor);
+            }
+        }
+
+        public string selectFormatada(string query)
+        {
+
+        }
     }
 }

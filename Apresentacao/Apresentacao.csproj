@@ -55,6 +55,18 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroPesquisa.Designer.cs">
+      <DependentUpon>FormCadastroPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCampoPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCampoPesquisa.Designer.cs">
+      <DependentUpon>FormCampoPesquisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEstadoCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,12 @@
     <Compile Include="Validacao.cs" />
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroPesquisa.resx">
+      <DependentUpon>FormCadastroPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCampoPesquisa.resx">
+      <DependentUpon>FormCampoPesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstadoCadastro.resx">
       <DependentUpon>FormEstadoCadastro.cs</DependentUpon>

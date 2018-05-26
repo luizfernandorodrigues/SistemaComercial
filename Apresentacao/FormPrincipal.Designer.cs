@@ -45,6 +45,8 @@
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDePesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +73,8 @@
             this.parceirosToolStripMenuItem,
             this.empresaToolStripMenuItem,
             this.vendedorToolStripMenuItem,
-            this.logradouroToolStripMenuItem});
+            this.logradouroToolStripMenuItem,
+            this.sistemaToolStripMenuItem});
             this.cadastrosIniciaisToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Air_Pilot_Hat_25px_1;
             this.cadastrosIniciaisToolStripMenuItem.Name = "cadastrosIniciaisToolStripMenuItem";
             this.cadastrosIniciaisToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
@@ -111,21 +114,21 @@
             // 
             this.cepToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Marker_25px;
             this.cepToolStripMenuItem.Name = "cepToolStripMenuItem";
-            this.cepToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cepToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.cepToolStripMenuItem.Text = "Cep";
             // 
             // cidadeToolStripMenuItem
             // 
             this.cidadeToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Point_Objects_25px;
             this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.cidadeToolStripMenuItem.Text = "Cidade";
             // 
             // estadoToolStripMenuItem
             // 
             this.estadoToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Map_Marker_25px;
             this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.estadoToolStripMenuItem.Text = "Estado";
             this.estadoToolStripMenuItem.Click += new System.EventHandler(this.estadoToolStripMenuItem_Click);
             // 
@@ -133,7 +136,7 @@
             // 
             this.paisToolStripMenuItem.Image = global::Apresentacao.Properties.Resources.Globe_25px;
             this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
-            this.paisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.paisToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.paisToolStripMenuItem.Text = "Pais";
             this.paisToolStripMenuItem.Click += new System.EventHandler(this.paisToolStripMenuItem_Click);
             // 
@@ -174,6 +177,21 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // sistemaToolStripMenuItem
+            // 
+            this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroDePesquisaToolStripMenuItem});
+            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
+            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sistemaToolStripMenuItem.Text = "Sistema";
+            // 
+            // cadastroDePesquisaToolStripMenuItem
+            // 
+            this.cadastroDePesquisaToolStripMenuItem.Name = "cadastroDePesquisaToolStripMenuItem";
+            this.cadastroDePesquisaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.cadastroDePesquisaToolStripMenuItem.Text = "Cadastro de Pesquisa";
+            this.cadastroDePesquisaToolStripMenuItem.Click += new System.EventHandler(this.cadastroDePesquisaToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,5 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem contasAReceberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroDePesquisaToolStripMenuItem;
     }
 }

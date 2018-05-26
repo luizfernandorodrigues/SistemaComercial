@@ -28,18 +28,18 @@ namespace Apresentacao
         /// <param name="e"></param>
         private void FormBase_Load(object sender, EventArgs e)
         {
-            this.toolTipCadastro.SetToolTip(this.btnAnterior, Util.BOTAO_ANTERIOR);
-            this.toolTipCadastro.SetToolTip(this.btnDesfazer, Util.BOTAO_DESFAZER);
-            this.toolTipCadastro.SetToolTip(this.btnEditar, Util.BOTAO_EDITAR);
-            this.toolTipCadastro.SetToolTip(this.btnExcluir, Util.BOTAO_EXCLUIR);
-            this.toolTipCadastro.SetToolTip(this.btnNovo, Util.BOTAO_NOVO);
-            this.toolTipCadastro.SetToolTip(this.btnPesquisa, Util.BOTAO_PESQUISA);
-            this.toolTipCadastro.SetToolTip(this.btnPrimeiroRegistro, Util.BOTAO_PRIMEIRO);
-            this.toolTipCadastro.SetToolTip(this.btnProximo, Util.BOTAO_PROXIMO);
-            this.toolTipCadastro.SetToolTip(this.btnRelatorio, Util.BOTAO_RELATORIO);
-            this.toolTipCadastro.SetToolTip(this.btnSalvar, Util.BOTAO_SALVAR);
-            this.toolTipCadastro.SetToolTip(this.btnUltimoRegistro, Util.BOTAO_ULTIMO);
-            this.toolTipCadastro.SetToolTip(this.btnSair, Util.BOTAO_SAIR);
+            toolTipCadastro.SetToolTip(btnAnterior, Util.BOTAO_ANTERIOR);
+            toolTipCadastro.SetToolTip(btnDesfazer, Util.BOTAO_DESFAZER);
+            toolTipCadastro.SetToolTip(btnEditar, Util.BOTAO_EDITAR);
+            toolTipCadastro.SetToolTip(btnExcluir, Util.BOTAO_EXCLUIR);
+            toolTipCadastro.SetToolTip(btnNovo, Util.BOTAO_NOVO);
+            toolTipCadastro.SetToolTip(btnPesquisa, Util.BOTAO_PESQUISA);
+            toolTipCadastro.SetToolTip(btnPrimeiroRegistro, Util.BOTAO_PRIMEIRO);
+            toolTipCadastro.SetToolTip(btnProximo, Util.BOTAO_PROXIMO);
+            toolTipCadastro.SetToolTip(btnRelatorio, Util.BOTAO_RELATORIO);
+            toolTipCadastro.SetToolTip(btnSalvar, Util.BOTAO_SALVAR);
+            toolTipCadastro.SetToolTip(btnUltimoRegistro, Util.BOTAO_ULTIMO);
+            toolTipCadastro.SetToolTip(btnSair, Util.BOTAO_SAIR);
         }
 
         private void btnsalvar_Click(object sender, EventArgs e)

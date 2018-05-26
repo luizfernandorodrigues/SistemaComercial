@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessaBanco.cs" />
+    <Compile Include="CarregaPesquisa.cs" />
     <Compile Include="EstadoDados.cs" />
     <Compile Include="PaisDados.cs" />
+    <Compile Include="PesquisaDados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

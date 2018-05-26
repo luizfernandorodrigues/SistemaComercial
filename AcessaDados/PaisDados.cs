@@ -16,11 +16,11 @@ namespace AcessaDados
         private const string UKEY = "ukey";
         private const string DESCRICAO_PAIS = "descricaoPais";
         private const string CODIGO_PAIS = "codigoPais";
+        private const string FORM_PESQUISA = "FormPaisCadastro";
 
         AcessaBanco acessaBanco = new AcessaBanco();
         CriaStringSql criaString = new CriaStringSql("tblPais");
-
-        /// <summary>
+        CarregaPesquisa carregaPesquisa = new CarregaPesquisa(FORM_PESQUISA);
         /// Método que insere no banco de dados o objeto pais 
         /// </summary>
         /// <param name="pais"></param>
@@ -58,6 +58,7 @@ namespace AcessaDados
         /// <returns></returns>
         public PaisCollection pesquisa(string nome, string codigo, string operadorNome, string operadorCodigo, string valorEntreNome, string valorEntreCodigo)
         {
+            string s = carregaPesquisa.query();
             DataTable dataTable = new DataTable();
             PaisCollection paisCollection = new PaisCollection();
             string select = "";
@@ -147,9 +148,9 @@ namespace AcessaDados
                 string sql = criaString.Update();
                 acessaBanco.criaConexao();
                 acessaBanco.limpaParametros();
-                acessaBanco.adicionaParametros("@"+DESCRICAO_PAIS, pais.Nome);
-                acessaBanco.adicionaParametros("@"+CODIGO_PAIS, pais.Codigo);
-                acessaBanco.adicionaParametros("@"+UKEY, pais.Ukey);
+                acessaBanco.adicionaParametros("@" + DESCRICAO_PAIS, pais.Nome);
+                acessaBanco.adicionaParametros("@" + CODIGO_PAIS, pais.Codigo);
+                acessaBanco.adicionaParametros("@" + UKEY, pais.Ukey);
                 acessaBanco.executaManipulacao(CommandType.Text, sql);
             }
             catch
@@ -162,7 +163,7 @@ namespace AcessaDados
         /// Método para realizar o delete no banco de dados
         /// </summary>
         /// <param name="pais"></param>
-        public void delete (Pais pais)
+        public void delete(Pais pais)
         {
             try
             {
@@ -170,7 +171,7 @@ namespace AcessaDados
                 string sql = criaString.delete();
                 acessaBanco.criaConexao();
                 acessaBanco.limpaParametros();
-                acessaBanco.adicionaParametros("@"+UKEY, pais.Ukey);
+                acessaBanco.adicionaParametros("@" + UKEY, pais.Ukey);
                 acessaBanco.executaManipulacao(CommandType.Text, sql);
             }
             catch
@@ -178,5 +179,7 @@ namespace AcessaDados
                 throw new Exception();
             }
         }
+
+        
     }
 }
