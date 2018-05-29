@@ -32,7 +32,6 @@ namespace AcessaDados
                 criaString.addCampo(DESCRICAO_PAIS, DESCRICAO_PAIS);
                 criaString.addCampo(CODIGO_PAIS, CODIGO_PAIS);
                 string sql = criaString.insert();
-                acessaBanco.criaConexao();
                 acessaBanco.limpaParametros();
                 acessaBanco.adicionaParametros(UKEY, pais.Ukey);
                 acessaBanco.adicionaParametros(DESCRICAO_PAIS, pais.Nome);
@@ -112,7 +111,6 @@ namespace AcessaDados
                 criaString.addWhere(CODIGO_PAIS, CODIGO_PAIS, operadorCodigo, valorEntreCodigo, codigo);
                 select = criaString.select();
             }
-            acessaBanco.criaConexao();
             acessaBanco.limpaParametros();
             Console.WriteLine(nome);
             Console.WriteLine(codigo);
@@ -146,7 +144,6 @@ namespace AcessaDados
                 criaString.addCampo(CODIGO_PAIS, CODIGO_PAIS);
                 criaString.addWhere(UKEY, UKEY);
                 string sql = criaString.Update();
-                acessaBanco.criaConexao();
                 acessaBanco.limpaParametros();
                 acessaBanco.adicionaParametros("@" + DESCRICAO_PAIS, pais.Nome);
                 acessaBanco.adicionaParametros("@" + CODIGO_PAIS, pais.Codigo);
@@ -169,7 +166,6 @@ namespace AcessaDados
             {
                 criaString.addWhere(UKEY, UKEY);
                 string sql = criaString.delete();
-                acessaBanco.criaConexao();
                 acessaBanco.limpaParametros();
                 acessaBanco.adicionaParametros("@" + UKEY, pais.Ukey);
                 acessaBanco.executaManipulacao(CommandType.Text, sql);
@@ -180,6 +176,6 @@ namespace AcessaDados
             }
         }
 
-        
+
     }
 }

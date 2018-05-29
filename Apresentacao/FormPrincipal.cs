@@ -42,7 +42,7 @@ namespace Apresentacao
 
         private void cadastroDePesquisaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCadastroPesquisa frm = new FormCadastroPesquisa();
+            FormPesquisaCadastro frm = new FormPesquisaCadastro();
             frm.Show();
         }
     }

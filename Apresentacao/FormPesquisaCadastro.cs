@@ -11,13 +11,14 @@ using Utilitarios;
 
 namespace Apresentacao
 {
-    public partial class FormCadastroPesquisa : Apresentacao.FormBase
+    public partial class FormPesquisaCadastro : Apresentacao.FormBase
     {
         Pesquisa pesquisa = new Pesquisa();
         PesquisaDados pesquisaDados = new PesquisaDados();
         private int flag = 1;
+        DataTable dataTable = new DataTable();
 
-        public FormCadastroPesquisa()
+        public FormPesquisaCadastro()
         {
             InitializeComponent();
         }
@@ -119,6 +120,23 @@ namespace Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             flag = 1;
+            btnNovoRegistro.Enabled = true;
+        }
+
+        private void btnNovoRegistro_Click(object sender, EventArgs e)
+        {
+            FormCampoPesquisaCadastro frm = new FormCampoPesquisaCadastro(this);
+            frm.Show();
+        }
+
+        private void FormPesquisaCadastro_Load(object sender, EventArgs e)
+        {
+            dgvCampos.AutoGenerateColumns = false;
+        }
+
+        public void preencheGrid(CampoPesquisaCollection campoPesquisas)
+        {
+            //dataTable.
         }
     }
 }

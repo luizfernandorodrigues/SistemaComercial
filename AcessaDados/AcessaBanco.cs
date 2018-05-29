@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AcessaDados
 {
-   public class AcessaBanco
+    public class AcessaBanco
     {
         #region propriedades da classe
         private string server;
@@ -54,7 +54,7 @@ namespace AcessaDados
         public void adicionaParametros(string nomeParametro, object valorParametro)
         {
             sqlParametros.Add(new SqlParameter(nomeParametro, valorParametro));
-            
+
         }
 
         public void executaManipulacao(CommandType commandType, string sql)
@@ -81,6 +81,41 @@ namespace AcessaDados
             {
 
                 throw new Exception(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        /// <summary>
+        /// Método para fazer transação com mais de uma tabela
+        /// </summary>
+        /// <param name="commandType"></param>
+        /// <param name="sql"></param>
+        public void transacaoSql(CommandType commandType, string sql)
+        {
+            SqlConnection sqlConnection = criaConexao();
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandType = commandType;
+            sqlCommand.CommandText = sql;
+            sqlCommand.CommandTimeout = 7200;
+            foreach (SqlParameter sqlParameter in sqlParametros)
+            {
+                sqlCommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+            }
+            sqlConnection.Open();
+            SqlTransaction sqlTransaction = sqlConnection.BeginTransaction();
+            try
+            {
+                sqlCommand.Transaction = sqlTransaction;
+                sqlCommand.ExecuteNonQuery();
+                sqlTransaction.Commit();
+            }
+            catch (SqlException)
+            {
+                sqlTransaction.Rollback();
+                throw new Exception();
             }
             finally
             {
@@ -135,6 +170,8 @@ namespace AcessaDados
             }
 
         }
+
+
         /// <summary>
         /// Função que busca dos dados do servidor de banco de dados a partir de um arquivo 
         /// </summary>

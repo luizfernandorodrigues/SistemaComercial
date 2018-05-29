@@ -55,17 +55,17 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroPesquisa.cs">
+    <Compile Include="FormPesquisaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroPesquisa.Designer.cs">
-      <DependentUpon>FormCadastroPesquisa.cs</DependentUpon>
+    <Compile Include="FormPesquisaCadastro.Designer.cs">
+      <DependentUpon>FormPesquisaCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCampoPesquisa.cs">
+    <Compile Include="FormCampoPesquisaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCampoPesquisa.Designer.cs">
-      <DependentUpon>FormCampoPesquisa.cs</DependentUpon>
+    <Compile Include="FormCampoPesquisaCadastro.Designer.cs">
+      <DependentUpon>FormCampoPesquisaCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEstadoCadastro.cs">
       <SubType>Form</SubType>
@@ -105,11 +105,11 @@
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroPesquisa.resx">
-      <DependentUpon>FormCadastroPesquisa.cs</DependentUpon>
+    <EmbeddedResource Include="FormPesquisaCadastro.resx">
+      <DependentUpon>FormPesquisaCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCampoPesquisa.resx">
-      <DependentUpon>FormCampoPesquisa.cs</DependentUpon>
+    <EmbeddedResource Include="FormCampoPesquisaCadastro.resx">
+      <DependentUpon>FormCampoPesquisaCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstadoCadastro.resx">
       <DependentUpon>FormEstadoCadastro.cs</DependentUpon>

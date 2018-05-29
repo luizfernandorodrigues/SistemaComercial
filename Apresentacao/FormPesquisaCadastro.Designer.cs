@@ -1,6 +1,6 @@
 ﻿namespace Apresentacao
 {
-    partial class FormCadastroPesquisa
+    partial class FormPesquisaCadastro
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -39,6 +39,13 @@
             this.lblSql = new System.Windows.Forms.Label();
             this.btnNovoRegistro = new System.Windows.Forms.Button();
             this.dgvCampos = new System.Windows.Forms.DataGridView();
+            this.btnEditaRegistro = new System.Windows.Forms.Button();
+            this.btnVisualizaRegistro = new System.Windows.Forms.Button();
+            this.btnApagaRegistro = new System.Windows.Forms.Button();
+            this.Tabela = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Campo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Operador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCampos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +139,8 @@
             // 
             // btnNovoRegistro
             // 
-            this.btnNovoRegistro.Image = global::Apresentacao.Properties.Resources.plus_15px;
+            this.btnNovoRegistro.Enabled = false;
+            this.btnNovoRegistro.Image = global::Apresentacao.Properties.Resources.Add_List_15px;
             this.btnNovoRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNovoRegistro.Location = new System.Drawing.Point(21, 485);
             this.btnNovoRegistro.Name = "btnNovoRegistro";
@@ -140,19 +148,90 @@
             this.btnNovoRegistro.TabIndex = 12;
             this.btnNovoRegistro.Text = "Novo";
             this.btnNovoRegistro.UseVisualStyleBackColor = true;
+            this.btnNovoRegistro.Click += new System.EventHandler(this.btnNovoRegistro_Click);
             // 
             // dgvCampos
             // 
             this.dgvCampos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCampos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tabela,
+            this.Campo,
+            this.Operador,
+            this.Tipo});
             this.dgvCampos.Location = new System.Drawing.Point(21, 514);
             this.dgvCampos.Name = "dgvCampos";
             this.dgvCampos.Size = new System.Drawing.Size(568, 150);
             this.dgvCampos.TabIndex = 13;
             // 
-            // FormCadastroPesquisa
+            // btnEditaRegistro
+            // 
+            this.btnEditaRegistro.Enabled = false;
+            this.btnEditaRegistro.Image = global::Apresentacao.Properties.Resources.Edit_Property_15px;
+            this.btnEditaRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditaRegistro.Location = new System.Drawing.Point(102, 485);
+            this.btnEditaRegistro.Name = "btnEditaRegistro";
+            this.btnEditaRegistro.Size = new System.Drawing.Size(75, 23);
+            this.btnEditaRegistro.TabIndex = 14;
+            this.btnEditaRegistro.Text = "Editar";
+            this.btnEditaRegistro.UseVisualStyleBackColor = true;
+            // 
+            // btnVisualizaRegistro
+            // 
+            this.btnVisualizaRegistro.Enabled = false;
+            this.btnVisualizaRegistro.Image = global::Apresentacao.Properties.Resources.Page_Overview__15px;
+            this.btnVisualizaRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVisualizaRegistro.Location = new System.Drawing.Point(183, 485);
+            this.btnVisualizaRegistro.Name = "btnVisualizaRegistro";
+            this.btnVisualizaRegistro.Size = new System.Drawing.Size(71, 23);
+            this.btnVisualizaRegistro.TabIndex = 15;
+            this.btnVisualizaRegistro.Text = "Visualiza";
+            this.btnVisualizaRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVisualizaRegistro.UseVisualStyleBackColor = true;
+            // 
+            // btnApagaRegistro
+            // 
+            this.btnApagaRegistro.Enabled = false;
+            this.btnApagaRegistro.Image = global::Apresentacao.Properties.Resources.Delete_Property_15px;
+            this.btnApagaRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnApagaRegistro.Location = new System.Drawing.Point(264, 485);
+            this.btnApagaRegistro.Name = "btnApagaRegistro";
+            this.btnApagaRegistro.Size = new System.Drawing.Size(66, 23);
+            this.btnApagaRegistro.TabIndex = 16;
+            this.btnApagaRegistro.Text = "Apagar";
+            this.btnApagaRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnApagaRegistro.UseVisualStyleBackColor = true;
+            // 
+            // Tabela
+            // 
+            this.Tabela.DataPropertyName = "tabelaCampo";
+            this.Tabela.HeaderText = "Tabela";
+            this.Tabela.Name = "Tabela";
+            // 
+            // Campo
+            // 
+            this.Campo.DataPropertyName = "campo";
+            this.Campo.HeaderText = "Campo";
+            this.Campo.Name = "Campo";
+            // 
+            // Operador
+            // 
+            this.Operador.DataPropertyName = "operadorCampo";
+            this.Operador.HeaderText = "Operador";
+            this.Operador.Name = "Operador";
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "tipoCampo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
+            // FormPesquisaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(593, 671);
+            this.Controls.Add(this.btnApagaRegistro);
+            this.Controls.Add(this.btnVisualizaRegistro);
+            this.Controls.Add(this.btnEditaRegistro);
             this.Controls.Add(this.dgvCampos);
             this.Controls.Add(this.btnNovoRegistro);
             this.Controls.Add(this.lblSql);
@@ -164,9 +243,10 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.Name = "FormCadastroPesquisa";
+            this.Name = "FormPesquisaCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pesquisa";
+            this.Load += new System.EventHandler(this.FormPesquisaCadastro_Load);
             this.Controls.SetChildIndex(this.lblCodigo, 0);
             this.Controls.SetChildIndex(this.txtCodigo, 0);
             this.Controls.SetChildIndex(this.lblNome, 0);
@@ -178,6 +258,9 @@
             this.Controls.SetChildIndex(this.lblSql, 0);
             this.Controls.SetChildIndex(this.btnNovoRegistro, 0);
             this.Controls.SetChildIndex(this.dgvCampos, 0);
+            this.Controls.SetChildIndex(this.btnEditaRegistro, 0);
+            this.Controls.SetChildIndex(this.btnVisualizaRegistro, 0);
+            this.Controls.SetChildIndex(this.btnApagaRegistro, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCampos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,6 +279,13 @@
         private System.Windows.Forms.TextBox txtSql;
         private System.Windows.Forms.Label lblSql;
         private System.Windows.Forms.Button btnNovoRegistro;
-        private System.Windows.Forms.DataGridView dgvCampos;
+        private System.Windows.Forms.Button btnEditaRegistro;
+        private System.Windows.Forms.Button btnVisualizaRegistro;
+        private System.Windows.Forms.Button btnApagaRegistro;
+        public System.Windows.Forms.DataGridView dgvCampos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tabela;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Campo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Operador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
     }
 }

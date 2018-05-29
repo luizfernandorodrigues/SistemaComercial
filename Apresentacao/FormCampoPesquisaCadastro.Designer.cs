@@ -1,6 +1,6 @@
 ﻿namespace Apresentacao
 {
-    partial class FormCampoPesquisa
+    partial class FormCampoPesquisaCadastro
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -37,6 +37,10 @@
             this.cbxOperador = new System.Windows.Forms.ComboBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // lblTabela
             // 
@@ -108,7 +112,7 @@
             this.cbxTipo.Size = new System.Drawing.Size(219, 21);
             this.cbxTipo.TabIndex = 10;
             // 
-            // FormCampoPesquisa
+            // FormCampoPesquisaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(593, 215);
@@ -120,9 +124,11 @@
             this.Controls.Add(this.lblCampo);
             this.Controls.Add(this.txtTabela);
             this.Controls.Add(this.lblTabela);
-            this.Name = "FormCampoPesquisa";
+            this.Name = "FormCampoPesquisaCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Campos da Pesquisa";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCampoPesquisaCadastro_FormClosed);
+            this.Load += new System.EventHandler(this.FormCampoPesquisaCadastro_Load);
             this.Controls.SetChildIndex(this.lblTabela, 0);
             this.Controls.SetChildIndex(this.txtTabela, 0);
             this.Controls.SetChildIndex(this.lblCampo, 0);

@@ -257,7 +257,7 @@ namespace Utilitarios
 
         public string selectFormatada(string query)
         {
-
+            return null;
         }
     }
 }
