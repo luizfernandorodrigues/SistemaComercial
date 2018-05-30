@@ -203,12 +203,14 @@
             // 
             // Tabela
             // 
+            this.Tabela.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Tabela.DataPropertyName = "tabelaCampo";
             this.Tabela.HeaderText = "Tabela";
             this.Tabela.Name = "Tabela";
             // 
             // Campo
             // 
+            this.Campo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Campo.DataPropertyName = "campo";
             this.Campo.HeaderText = "Campo";
             this.Campo.Name = "Campo";

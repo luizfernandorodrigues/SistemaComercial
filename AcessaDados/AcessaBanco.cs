@@ -93,34 +93,47 @@ namespace AcessaDados
         /// </summary>
         /// <param name="commandType"></param>
         /// <param name="sql"></param>
-        public void transacaoSql(CommandType commandType, string sql)
+        public void transacaoSql(CommandType commandType, List<string> sql)
         {
             SqlConnection sqlConnection = criaConexao();
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-            sqlCommand.CommandType = commandType;
-            sqlCommand.CommandText = sql;
-            sqlCommand.CommandTimeout = 7200;
-            foreach (SqlParameter sqlParameter in sqlParametros)
+            //SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            SqlCommand[] sqlCommand = new SqlCommand[sql.Count];
+            //sqlCommand.CommandType = commandType;
+
+            for (int i = 0; i < sql.Count; i++)
             {
-                sqlCommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                sqlCommand[i] = sqlConnection.CreateCommand();
+                sqlCommand[i].CommandText = sql[i];
+                sqlCommand[i].CommandTimeout = 7200;
+
+                foreach (SqlParameter sqlParameter in sqlParametros)
+                {
+                    sqlCommand[i].Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                }
+                sqlConnection.Open();
+                SqlTransaction sqlTransaction = sqlConnection.BeginTransaction();
+                try
+                {
+                    sqlCommand[i].Transaction = sqlTransaction;
+                    sqlCommand[i].ExecuteNonQuery();
+                    if (i == sql.Count)
+                    {
+                        sqlTransaction.Commit();
+                    }
+
+                }
+                catch (SqlException)
+                {
+                    sqlTransaction.Rollback();
+                    throw new Exception();
+                }
+                finally
+                {
+                    sqlConnection.Close();
+                }
+
             }
-            sqlConnection.Open();
-            SqlTransaction sqlTransaction = sqlConnection.BeginTransaction();
-            try
-            {
-                sqlCommand.Transaction = sqlTransaction;
-                sqlCommand.ExecuteNonQuery();
-                sqlTransaction.Commit();
-            }
-            catch (SqlException)
-            {
-                sqlTransaction.Rollback();
-                throw new Exception();
-            }
-            finally
-            {
-                sqlConnection.Close();
-            }
+
         }
 
         /// <summary>

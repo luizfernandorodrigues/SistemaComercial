@@ -38,6 +38,10 @@
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
+            // btnSair
+            // 
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // btnSalvar
             // 
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);

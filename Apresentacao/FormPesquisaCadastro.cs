@@ -17,6 +17,9 @@ namespace Apresentacao
         PesquisaDados pesquisaDados = new PesquisaDados();
         private int flag = 1;
         DataTable dataTable = new DataTable();
+        BindingSource bindingSource = new BindingSource();
+        public static CampoPesquisaCollection campoPesquisas = new CampoPesquisaCollection();
+        public static Guid ukey;
 
         public FormPesquisaCadastro()
         {
@@ -38,7 +41,7 @@ namespace Apresentacao
                 {
                     try
                     {
-                        pesquisaDados.insert(pesquisa);
+                        pesquisaDados.insert(pesquisa, campoPesquisas);
                         Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
                         Util.botaoSalvar(this);
                     }
@@ -78,6 +81,9 @@ namespace Apresentacao
             {
                 pesquisa.Relatorio = 0;
             }
+
+            //preenche objeto dos campo
+
         }
 
         /// <summary>
@@ -121,6 +127,7 @@ namespace Apresentacao
         {
             flag = 1;
             btnNovoRegistro.Enabled = true;
+            ukey = Guid.NewGuid();
         }
 
         private void btnNovoRegistro_Click(object sender, EventArgs e)
@@ -134,9 +141,11 @@ namespace Apresentacao
             dgvCampos.AutoGenerateColumns = false;
         }
 
-        public void preencheGrid(CampoPesquisaCollection campoPesquisas)
+        public void preencheGrid()
         {
-            //dataTable.
+            dgvCampos.DataSource = null;
+            dgvCampos.DataSource = campoPesquisas;
+            
         }
     }
 }

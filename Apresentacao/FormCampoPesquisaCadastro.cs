@@ -14,9 +14,10 @@ namespace Apresentacao
     public partial class FormCampoPesquisaCadastro : Apresentacao.FormBase
     {
         PreencheComboBox preencheCombo = new PreencheComboBox();
-        CampoPesquisa campoPesquisa = new CampoPesquisa();
+        private int flag = 1;
         CampoPesquisaCollection campos = new CampoPesquisaCollection();
         FormPesquisaCadastro frm;
+          
         public FormCampoPesquisaCadastro(FormPesquisaCadastro formPesquisaCadastro)
         {
             InitializeComponent();
@@ -27,34 +28,71 @@ namespace Apresentacao
         {
             preencheCombo.combo(cbxOperador);
             preencheCombo.tipo(cbxTipo);
+            btnPesquisa.Visible = false;
+            btnRelatorio.Visible = false;
         }
 
+        /// <summary>
+        /// Evento do botão salvar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            try
+            //inserindo
+            if (flag == 1)
             {
-                preencheObjeto();
-                campos.Add(campoPesquisa);
-
+                try
+                {
+                    preencheObjeto();
+                    Util.botaoSalvar(this);
+                }
+                catch (Exception ex)
+                {
+                    Util_Msg.atencao(Util.MENSAGEM_ERRO + ex.Message);
+                }
             }
-            catch (Exception ex)
+            //alterando
+            else if (flag == 2)
             {
-                Util_Msg.atencao(Util.MENSAGEM_ERRO + ex.Message);
+
             }
         }
 
+        /// <summary>
+        /// Método para preencher o obejto
+        /// </summary>
         private void preencheObjeto()
         {
+            CampoPesquisa campoPesquisa = new CampoPesquisa();
+            campoPesquisa.Pesquisa_ukey = FormPesquisaCadastro.ukey;
             campoPesquisa.Ukey = Guid.NewGuid();
             campoPesquisa.TabelaCampo = txtTabela.Text.Trim();
             campoPesquisa.Campo = txtCampo.Text.Trim();
             campoPesquisa.OperadorCampo = Convert.ToInt32(cbxOperador.SelectedValue.ToString());
             campoPesquisa.TipoCampo = Convert.ToInt32(cbxTipo.SelectedValue.ToString());
+            FormPesquisaCadastro.campoPesquisas.Add(campoPesquisa);
         }
 
+        /// <summary>
+        /// Evento que ocorre quando o form é fechado, utilizado para 
+        /// preencher a grid do form de cadastro de pesquisa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCampoPesquisaCadastro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frm.preencheGrid(campos);
+            frm.preencheGrid();
+        }
+
+        /// <summary>
+        /// Evento do botão sair, chama o preenche grid do form de cadastro de pesquisa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            frm.preencheGrid();
         }
     }
 }
