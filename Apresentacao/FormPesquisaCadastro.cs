@@ -68,7 +68,7 @@ namespace Apresentacao
         /// </summary>
         private void salvar()
         {
-            pesquisa.Ukey = Guid.NewGuid();
+            pesquisa.Ukey = ukey;
             pesquisa.NomePesquisa = txtNome.Text.Trim();
             pesquisa.CodigoPesquisa = txtCodigo.Text.Trim();
             pesquisa.TelaPesquisa = txtTela.Text.Trim();

@@ -16,16 +16,39 @@ namespace AcessaDados
         private string banco;
         private string senha;
         private string usuario;
+
+        SqlConnection sqlConnection;
+        SqlCommand sqlCommand;
+        SqlTransaction sqlTransaction;
         #endregion
 
+        /// <summary>
+        /// Construtor da classe, quando a mesma for instanciada ja cria a conexão
+        /// </summary>
+        public AcessaBanco()
+        {
+            sqlConnection = criaConexao();
+        }
+
+        /// <summary>
+        /// Método para criar a conexão com o banco de dados, os dados do servidor de banco de dados fica em um arquivo
+        /// chamado conecta.txt que fica no diretorio de execução do exe
+        /// </summary>
+        /// <returns></returns>
         public SqlConnection criaConexao()
         {
             //busca os dados de acesso ao servidor atraves do conecta
             try
             {
+                //pega o caminho do executavel da aplicação
                 string caminho = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString());
                 string nomeArquivo = "conecta.txt";
+
+                //conbinação do caminho com o nome do arquivo para fazer a leitura
                 string caminhoAbsoluto = Path.Combine(caminho, nomeArquivo);
+
+                //guardo as linhas em um array e pego a primeira e extrai os dados
+                //exempplo de escrita dentro do arquivo: servidor,usuario,senha,banco
                 string[] array = File.ReadAllLines(caminhoAbsoluto);
                 string aux = array[0];
                 string[] arrayaux = aux.Split(',');
@@ -34,29 +57,39 @@ namespace AcessaDados
                 senha = arrayaux[2];
                 banco = arrayaux[3];
                 return new SqlConnection("Data Source = " + server + "; Initial Catalog = " + banco + "; Persist Security Info = True; User ID = " + usuario + "; Password = " + senha + "");
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
 
+        //variavel local do tipo coleção de parametros onde é alimentada pelo método adicionaParametros
         private SqlParameterCollection sqlParametros = new SqlCommand().Parameters;
 
+        /// <summary>
+        /// Metodo que remove todos parametros da coleção
+        /// </summary>
         public void limpaParametros()
         {
-            this.sqlParametros.Clear();
+            sqlParametros.Clear();
         }
 
+        /// <summary>
+        /// Método que adiciona parametros na coleção local
+        /// </summary>
+        /// <param name="nomeParametro"></param>
+        /// <param name="valorParametro"></param>
         public void adicionaParametros(string nomeParametro, object valorParametro)
         {
             sqlParametros.Add(new SqlParameter(nomeParametro, valorParametro));
-
         }
 
+        /// <summary>
+        /// Método que executa manipulação no banco de dados
+        /// </summary>
+        /// <param name="commandType"></param>
+        /// <param name="sql"></param>
         public void executaManipulacao(CommandType commandType, string sql)
         {
             SqlConnection sqlConnection = criaConexao();
@@ -93,49 +126,66 @@ namespace AcessaDados
         /// </summary>
         /// <param name="commandType"></param>
         /// <param name="sql"></param>
-        public void transacaoSql(CommandType commandType, List<string> sql)
+        public void transacaoSql(CommandType commandType, string sql)
         {
-            SqlConnection sqlConnection = criaConexao();
-            //SqlCommand sqlCommand = sqlConnection.CreateCommand();
-            SqlCommand[] sqlCommand = new SqlCommand[sql.Count];
-            //sqlCommand.CommandType = commandType;
+            sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandType = commandType;
+            sqlCommand.CommandText = sql;
+            sqlCommand.CommandTimeout = 7200;
+            sqlCommand.Transaction = sqlTransaction;
 
-            for (int i = 0; i < sql.Count; i++)
+            foreach (SqlParameter sqlParameter in sqlParametros)
             {
-                sqlCommand[i] = sqlConnection.CreateCommand();
-                sqlCommand[i].CommandText = sql[i];
-                sqlCommand[i].CommandTimeout = 7200;
-
-                foreach (SqlParameter sqlParameter in sqlParametros)
-                {
-                    sqlCommand[i].Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                }
-                sqlConnection.Open();
-                SqlTransaction sqlTransaction = sqlConnection.BeginTransaction();
-                try
-                {
-                    sqlCommand[i].Transaction = sqlTransaction;
-                    sqlCommand[i].ExecuteNonQuery();
-                    if (i == sql.Count)
-                    {
-                        sqlTransaction.Commit();
-                    }
-
-                }
-                catch (SqlException)
-                {
-                    sqlTransaction.Rollback();
-                    throw new Exception();
-                }
-                finally
-                {
-                    sqlConnection.Close();
-                }
-
+                sqlCommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
             }
-
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
         }
 
+        /// <summary>
+        /// Método para efetivas as transações no banco de dados
+        /// </summary>
+        public void commit()
+        {
+            try
+            {
+                sqlTransaction.Commit();
+                close();
+            }
+            catch (Exception)
+            {
+                sqlTransaction.Rollback();
+                close();
+                throw;
+            }
+            finally
+            {
+                close();
+            }
+        }
+
+        /// <summary>
+        /// Método para abrir a transãção no banco de dados
+        /// </summary>
+        public void abrirTransacao()
+        {
+            sqlConnection.Open();
+            sqlTransaction = sqlConnection.BeginTransaction();
+        }
+
+        /// <summary>
+        /// Método para fechar a conexão com o banco de dados
+        /// </summary>
+        public void close()
+        {
+            sqlConnection.Close();
+        }
         /// <summary>
         /// Metodo que executa consulta no banco de dados retorna uma dataTable(tabela de dados)
         /// </summary>
@@ -144,20 +194,18 @@ namespace AcessaDados
         /// <returns></returns>
         public DataTable ExecutaConsulta(CommandType commandType, string sql)
         {
-            //criar conexao
-            SqlConnection sqlconnection = criaConexao();
             try
             {
 
                 //abre a conexao
-                sqlconnection.Open();
+                sqlConnection.Open();
                 //cria comando que vai levar informação para o banco de dados
-                SqlCommand sqlCommand = sqlconnection.CreateCommand();
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
                 //colocando as coisas dentro do comando
                 sqlCommand.CommandType = commandType;
                 sqlCommand.CommandText = sql;
                 sqlCommand.CommandTimeout = 7200;//tempo maximo de uma execução
-                //adicionar os parametros no comando
+                                                 //adicionar os parametros no comando
                 foreach (SqlParameter sqlParameter in sqlParametros)
                 {
                     sqlCommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
@@ -179,11 +227,10 @@ namespace AcessaDados
             //fecho a conexão com o banco 
             finally
             {
-                sqlconnection.Close();
+                sqlConnection.Close();
             }
 
         }
-
 
         /// <summary>
         /// Função que busca dos dados do servidor de banco de dados a partir de um arquivo 

@@ -1,1 +1,3 @@
-﻿Arrumar evento de desabilitar botoes depois de salvar
+﻿Arrumar evento de desabilitar botoes depois de salvar -ok
+Criar rotina de gravar log em um txt dentro do diretório da aplicação
+criar rotina de carregar as pesquisas referente ao form quando o mesmo for aberto
