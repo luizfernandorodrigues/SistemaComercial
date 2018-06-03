@@ -57,9 +57,18 @@ namespace Apresentacao
             {
                 valida();
                 gravar();
-                estadoDados.insert(estado);
-                Util.botaoSalvar(this);
-                Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
+                try
+                {
+                    estadoDados.insert(estado);
+                    Util.botaoSalvar(this);
+                    Util_Msg.aviso(Util.MENSAGEM_SUCESSO);
+                }
+                catch (Exception ex)
+                {
+                    Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                    throw;
+                }
+                
             } else if (flag == 2)
             {
 
@@ -106,6 +115,11 @@ namespace Apresentacao
         {
             FormEstadoPesquisa frm = new FormEstadoPesquisa();
             frm.Show();
+        }
+
+        private void FormEstadoCadastro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

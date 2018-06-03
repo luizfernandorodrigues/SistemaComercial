@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Apresentacao
 {
@@ -365,6 +366,10 @@ namespace Apresentacao
             }
         }
 
+        /// <summary>
+        /// Metodo do botão desfazer em estado de inserção do form
+        /// </summary>
+        /// <param name="ctr"></param>
         public static void desfazerEstadoNovo(Control ctr)
         {
             botaoEdita(ctr);
@@ -410,7 +415,8 @@ namespace Apresentacao
                 else if (c is Button && c.Name.Equals("btnEditar"))
                 {
                     c.Enabled = false;
-                } else if(c is Button && c.Name.Equals("btnSalvar"))
+                }
+                else if (c is Button && c.Name.Equals("btnSalvar"))
                 {
                     c.Enabled = false;
                 }
@@ -418,7 +424,8 @@ namespace Apresentacao
                 {
                     c.Enabled = false;
                     c.Text = "";
-                } else if(c is MaskedTextBox)
+                }
+                else if (c is MaskedTextBox)
                 {
                     c.Enabled = false;
                 }
@@ -429,6 +436,5 @@ namespace Apresentacao
             }
 
         }
-
     }
 }

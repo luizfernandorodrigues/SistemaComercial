@@ -57,7 +57,7 @@ namespace AcessaDados
         /// <returns></returns>
         public PaisCollection pesquisa(string nome, string codigo, string operadorNome, string operadorCodigo, string valorEntreNome, string valorEntreCodigo)
         {
-            string s = carregaPesquisa.query();
+           // string s = carregaPesquisa.query();
             DataTable dataTable = new DataTable();
             PaisCollection paisCollection = new PaisCollection();
             string select = "";
@@ -112,8 +112,6 @@ namespace AcessaDados
                 select = criaString.select();
             }
             acessaBanco.limpaParametros();
-            Console.WriteLine(nome);
-            Console.WriteLine(codigo);
             //teste de nomes de parametros pode ser aqui o erro
             acessaBanco.adicionaParametros("@" + DESCRICAO_PAIS, nome);
             acessaBanco.adicionaParametros("@" + CODIGO_PAIS, codigo);

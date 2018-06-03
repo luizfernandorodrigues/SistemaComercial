@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Apresentacao;
+using Utilitarios;
 
 namespace AcessaDados
 {
@@ -144,6 +146,7 @@ namespace AcessaDados
             }
             catch (SqlException ex)
             {
+                Util_Log.log(ex.Message);
                 throw;
             }
         }

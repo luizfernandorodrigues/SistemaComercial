@@ -145,6 +145,7 @@
             this.Name = "FormEstadoCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Estado";
+            this.Load += new System.EventHandler(this.FormEstadoCadastro_Load);
             this.Controls.SetChildIndex(this.lblNome, 0);
             this.Controls.SetChildIndex(this.txtNome, 0);
             this.Controls.SetChildIndex(this.txtSigla, 0);

@@ -92,6 +92,7 @@ namespace AcessaDados
             }
             catch(Exception ex)
             {
+                Util_Log.log(ex.Message);
                 throw;
             }
         }

@@ -181,7 +181,7 @@ namespace Utilitarios
                 }
             }
 
-            sql.Append(" FROM " + tabela);
+            sql.Append(" * FROM " + tabela);
 
             if (where.Count != 0)
             {

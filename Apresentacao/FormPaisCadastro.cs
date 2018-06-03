@@ -46,6 +46,7 @@ namespace Apresentacao
                     catch (Exception ex)
                     {
                         Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                        Util_Log.log(ex.Message);
                         return;
                     }
                 }
@@ -69,6 +70,7 @@ namespace Apresentacao
                     catch (Exception ex)
                     {
                         Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                        Util_Log.log(ex.Message);
                         return;
                     }
                 }
@@ -295,6 +297,7 @@ namespace Apresentacao
             catch (Exception ex)
             {
                 Util_Msg.erro("Não Foi Possivel Excluir o Registro! \n" + ex.Message);
+                Util_Log.log(ex.Message);
             }
         }
 
@@ -309,6 +312,11 @@ namespace Apresentacao
             {
                 Util.desfazerEstadoNovo(this);
             }
+
+        }
+
+        private void FormPaisCadastro_Load(object sender, EventArgs e)
+        {
 
         }
     }

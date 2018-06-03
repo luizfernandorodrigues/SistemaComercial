@@ -48,6 +48,7 @@ namespace Apresentacao
                     catch (Exception ex)
                     {
                         Util_Msg.erro(Util.MENSAGEM_ERRO + ex.Message);
+                        Util_Log.log(ex.Message);
                         return;
                     }
                 }
@@ -128,6 +129,7 @@ namespace Apresentacao
             flag = 1;
             btnNovoRegistro.Enabled = true;
             ukey = Guid.NewGuid();
+            dgvCampos.DataSource = null;
         }
 
         private void btnNovoRegistro_Click(object sender, EventArgs e)
@@ -146,6 +148,12 @@ namespace Apresentacao
             dgvCampos.DataSource = null;
             dgvCampos.DataSource = campoPesquisas;
             
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            FormPesquisa frm = new FormPesquisa(Name);
+            frm.Show();
         }
     }
 }

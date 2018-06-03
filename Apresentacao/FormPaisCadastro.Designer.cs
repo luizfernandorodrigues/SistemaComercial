@@ -122,6 +122,7 @@
             this.Name = "FormPaisCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pais";
+            this.Load += new System.EventHandler(this.FormPaisCadastro_Load);
             this.Controls.SetChildIndex(this.lblCodigo, 0);
             this.Controls.SetChildIndex(this.lblNome, 0);
             this.Controls.SetChildIndex(this.txtNome, 0);

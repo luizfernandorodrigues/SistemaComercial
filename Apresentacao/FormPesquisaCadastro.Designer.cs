@@ -39,15 +39,19 @@
             this.lblSql = new System.Windows.Forms.Label();
             this.btnNovoRegistro = new System.Windows.Forms.Button();
             this.dgvCampos = new System.Windows.Forms.DataGridView();
-            this.btnEditaRegistro = new System.Windows.Forms.Button();
-            this.btnVisualizaRegistro = new System.Windows.Forms.Button();
-            this.btnApagaRegistro = new System.Windows.Forms.Button();
             this.Tabela = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Campo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Operador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditaRegistro = new System.Windows.Forms.Button();
+            this.btnVisualizaRegistro = new System.Windows.Forms.Button();
+            this.btnApagaRegistro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCampos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // btnSalvar
             // 
@@ -163,6 +167,32 @@
             this.dgvCampos.Size = new System.Drawing.Size(568, 150);
             this.dgvCampos.TabIndex = 13;
             // 
+            // Tabela
+            // 
+            this.Tabela.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tabela.DataPropertyName = "tabelaCampo";
+            this.Tabela.HeaderText = "Tabela";
+            this.Tabela.Name = "Tabela";
+            // 
+            // Campo
+            // 
+            this.Campo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Campo.DataPropertyName = "campo";
+            this.Campo.HeaderText = "Campo";
+            this.Campo.Name = "Campo";
+            // 
+            // Operador
+            // 
+            this.Operador.DataPropertyName = "operadorCampo";
+            this.Operador.HeaderText = "Operador";
+            this.Operador.Name = "Operador";
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "tipoCampo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
             // btnEditaRegistro
             // 
             this.btnEditaRegistro.Enabled = false;
@@ -200,32 +230,6 @@
             this.btnApagaRegistro.Text = "Apagar";
             this.btnApagaRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnApagaRegistro.UseVisualStyleBackColor = true;
-            // 
-            // Tabela
-            // 
-            this.Tabela.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tabela.DataPropertyName = "tabelaCampo";
-            this.Tabela.HeaderText = "Tabela";
-            this.Tabela.Name = "Tabela";
-            // 
-            // Campo
-            // 
-            this.Campo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Campo.DataPropertyName = "campo";
-            this.Campo.HeaderText = "Campo";
-            this.Campo.Name = "Campo";
-            // 
-            // Operador
-            // 
-            this.Operador.DataPropertyName = "operadorCampo";
-            this.Operador.HeaderText = "Operador";
-            this.Operador.Name = "Operador";
-            // 
-            // Tipo
-            // 
-            this.Tipo.DataPropertyName = "tipoCampo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
             // 
             // FormPesquisaCadastro
             // 
