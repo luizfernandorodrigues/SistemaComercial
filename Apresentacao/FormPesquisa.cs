@@ -36,5 +36,11 @@ namespace Apresentacao
             }
             dgvPesquisas.DataSource = bsPesquisa;
         }
+
+        private void montaFiltros()
+        {
+            dgvFiltrosPesquisa.Columns.Clear();
+            //dgvFiltrosPesquisa.Columns
+        }
     }
 }

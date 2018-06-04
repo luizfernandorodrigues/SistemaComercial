@@ -14,7 +14,7 @@ namespace Utilitarios
             string caminho = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
             string arquivo = "log.txt";
             string caminhoCompleto = Path.Combine(caminho, arquivo);
-            StreamWriter streamWriter = new StreamWriter(caminhoCompleto);
+            StreamWriter streamWriter = new StreamWriter(caminhoCompleto, true);
             streamWriter.WriteLine(DateTime.Now + ": " + texto);
             streamWriter.Close();
         }
