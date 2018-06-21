@@ -69,6 +69,7 @@ namespace Apresentacao
             campoPesquisa.Ukey = Guid.NewGuid();
             campoPesquisa.TabelaCampo = txtTabela.Text.Trim();
             campoPesquisa.Campo = txtCampo.Text.Trim();
+            campoPesquisa.NomeCampo = txtNome.Text.Trim();
             campoPesquisa.OperadorCampo = Convert.ToInt32(cbxOperador.SelectedValue.ToString());
             campoPesquisa.TipoCampo = Convert.ToInt32(cbxTipo.SelectedValue.ToString());
             FormPesquisaCadastro.campoPesquisas.Add(campoPesquisa);
@@ -93,6 +94,11 @@ namespace Apresentacao
         private void btnSair_Click(object sender, EventArgs e)
         {
             frm.preencheGrid();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

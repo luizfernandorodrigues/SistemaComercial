@@ -21,6 +21,7 @@ namespace AcessaDados
         private const string UKEY_CAMPO = "ukey";
         private const string TABELA_CAMPO = "tabelaCampo";
         private const string CAMPO = "campo";
+        private const string NOME_CAMPO = "nomeCampo";
         private const string OPERADOR_CAMPO = "operadorCampo";
         private const string TIPO_CAMPO = "tipoCampo";
         private const string PESQUISA_UKEY = "pesquisa_ukey";
@@ -63,6 +64,7 @@ namespace AcessaDados
                 criaStringCampo.addCampo(UKEY_CAMPO, UKEY_CAMPO);
                 criaStringCampo.addCampo(TABELA_CAMPO, TABELA_CAMPO);
                 criaStringCampo.addCampo(CAMPO, CAMPO);
+                criaStringCampo.addCampo(NOME_CAMPO, NOME_CAMPO);
                 criaStringCampo.addCampo(OPERADOR_CAMPO, OPERADOR_CAMPO);
                 criaStringCampo.addCampo(TIPO_CAMPO, TIPO_CAMPO);
                 criaStringCampo.addCampo(PESQUISA_UKEY, PESQUISA_UKEY);
@@ -79,6 +81,7 @@ namespace AcessaDados
                     acessaBanco.adicionaParametros(UKEY_CAMPO, cp.Ukey);
                     acessaBanco.adicionaParametros(TABELA_CAMPO, cp.TabelaCampo);
                     acessaBanco.adicionaParametros(CAMPO, cp.Campo);
+                    acessaBanco.adicionaParametros(NOME_CAMPO, cp.NomeCampo);
                     acessaBanco.adicionaParametros(OPERADOR_CAMPO, cp.OperadorCampo);
                     acessaBanco.adicionaParametros(TIPO_CAMPO, cp.TipoCampo);
                     acessaBanco.adicionaParametros(PESQUISA_UKEY, cp.Pesquisa_ukey);

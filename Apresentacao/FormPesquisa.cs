@@ -16,7 +16,8 @@ namespace Apresentacao
     public partial class FormPesquisa : Form
     {
         private string form;
-        
+        CampoPesquisa campoPesquisa = new CampoPesquisa();
+
         public FormPesquisa(string nomeForm)
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace Apresentacao
             dgvPesquisas.AutoGenerateColumns = false;
             CarregaPesquisa carregaPesquisa = new CarregaPesquisa(form);
             bsPesquisa.DataSource = carregaPesquisa.pesquisas();
-            if(bsPesquisa.Count == 0)
+            if (bsPesquisa.Count == 0)
             {
                 Util_Msg.atencao("Nenhuma Pesquisa Configurada!");
                 Dispose();
@@ -40,7 +41,8 @@ namespace Apresentacao
         private void montaFiltros()
         {
             dgvFiltrosPesquisa.Columns.Clear();
-            //dgvFiltrosPesquisa.Columns
+            int posiçãoSelecionada = dgvPesquisas.CurrentRow.Index;
+            campoPesquisa = dgvPesquisas.Rows[posiçãoSelecionada].DataBoundItem as CampoPesquisa;
         }
     }
 }

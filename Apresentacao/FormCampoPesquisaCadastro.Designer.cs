@@ -36,6 +36,8 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.cbxOperador = new System.Windows.Forms.ComboBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSair
@@ -45,6 +47,10 @@
             // btnSalvar
             // 
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // lblTabela
             // 
@@ -83,7 +89,7 @@
             // lblOperador
             // 
             this.lblOperador.AutoSize = true;
-            this.lblOperador.Location = new System.Drawing.Point(13, 155);
+            this.lblOperador.Location = new System.Drawing.Point(13, 183);
             this.lblOperador.Name = "lblOperador";
             this.lblOperador.Size = new System.Drawing.Size(54, 13);
             this.lblOperador.TabIndex = 7;
@@ -92,7 +98,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(36, 184);
+            this.lblTipo.Location = new System.Drawing.Point(36, 212);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(31, 13);
             this.lblTipo.TabIndex = 8;
@@ -102,7 +108,7 @@
             // 
             this.cbxOperador.Enabled = false;
             this.cbxOperador.FormattingEnabled = true;
-            this.cbxOperador.Location = new System.Drawing.Point(67, 151);
+            this.cbxOperador.Location = new System.Drawing.Point(67, 179);
             this.cbxOperador.Name = "cbxOperador";
             this.cbxOperador.Size = new System.Drawing.Size(219, 21);
             this.cbxOperador.TabIndex = 9;
@@ -111,15 +117,34 @@
             // 
             this.cbxTipo.Enabled = false;
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(67, 180);
+            this.cbxTipo.Location = new System.Drawing.Point(67, 208);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(219, 21);
             this.cbxTipo.TabIndex = 10;
             // 
+            // txtNome
+            // 
+            this.txtNome.Enabled = false;
+            this.txtNome.Location = new System.Drawing.Point(67, 151);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(219, 20);
+            this.txtNome.TabIndex = 12;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(24, 155);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 11;
+            this.lblNome.Text = "Nome:";
+            // 
             // FormCampoPesquisaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(593, 215);
+            this.ClientSize = new System.Drawing.Size(593, 263);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.cbxOperador);
             this.Controls.Add(this.lblTipo);
@@ -141,6 +166,8 @@
             this.Controls.SetChildIndex(this.lblTipo, 0);
             this.Controls.SetChildIndex(this.cbxOperador, 0);
             this.Controls.SetChildIndex(this.cbxTipo, 0);
+            this.Controls.SetChildIndex(this.lblNome, 0);
+            this.Controls.SetChildIndex(this.txtNome, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +183,7 @@
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.ComboBox cbxOperador;
         private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label lblNome;
     }
 }
